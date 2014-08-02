@@ -17,15 +17,15 @@ PostGIS (Okresy, Obce, Ulice, StavebniObjekty; EPSG:5514)
 
 1) vytvoření DB
 
-   export DB=ruian_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
+          export DB=ruian_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
 
 2) Import ST (Okresy)
 
-   vfr2pg --type ST_UKSH --dbname $DB --layer Okresy --geom OriginalniHranice
+          vfr2pg --type ST_UKSH --dbname $DB --layer Okresy --geom OriginalniHranice
 
 3) Import OB (Obce, Ulice, StavebniObjekty)
 
-   vfr2pg --type OB_539058_UKSH --dbname $DB --layer Obce,Ulice,StavebniObjekty --geom OriginalniHranice
+          vfr2pg --type OB_539058_UKSH --dbname $DB --layer Obce,Ulice,StavebniObjekty --geom OriginalniHranice
 
 viz http://freegis.fsv.cvut.cz/gwiki/RUIAN_/_OGR-VFR#Konverze_do_PostGIS
 
