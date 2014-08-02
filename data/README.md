@@ -1,10 +1,12 @@
 Poznámky k datům
 ================
 
-Esri Shapefile (Okresy; EPSG:5514)
-----------------------------------
+Esri Shapefile (Okresy, Obce, Ulice, StavebniObjekty; EPSG:5514)
+----------------------------------------------------------------
 
         vfr2ogr --type ST_UKSH --format Esri_Shapefile --dsn . --layer Okresy --geom OriginalniHranice
+
+        vfr2ogr --type OB_539058_UKSH --format Esri_Shapefile --dsn . --layer Obce,Ulice,StavebniObjekty --geom OriginalniHranice
 
 viz http://freegis.fsv.cvut.cz/gwiki/RUIAN_/_OGR-VFR#Konverze_do_Esri_Shapefile
 
