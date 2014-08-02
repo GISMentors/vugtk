@@ -17,7 +17,7 @@ PostGIS (Okresy, Obce, Ulice, StavebniObjekty; EPSG:5514)
 
 1) vytvoření DB
 
-          export DB=ruian_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
+          export DB=gismentors_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
 
 2) Import ST (Okresy)
 
@@ -37,5 +37,5 @@ Vytvoření dávky:
 
 Nahrání dávky do DB:
 
-         export DB=ruian_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
+         export DB=gismentors_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
          postgis_restore.pl ruian_vugtk.dump | psql $DB
