@@ -1,8 +1,8 @@
 Poznámky k datům
 ================
 
-Okresy
-------
+Okresy (EPSG:5514)
+------------------
 
         vfr2ogr --type ST_UKSH --format Esri_Shapefile --dsn . --layer Okresy --geom OriginalniHranice
 
