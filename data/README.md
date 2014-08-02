@@ -33,9 +33,9 @@ Poznámka: Definice EPSG:5514 v DB obsahuje `+towgs84=570.8,85.7,462.8,4.998,1.5
 
 Vytvoření dávky:
 
-          pg_dump -Fc -b -v -x -Z 9 -f ruian_vugtk.dump ruian_vugtk
+          pg_dump -Fc -b -v -O -x -Z 9 -f gismentors_vugtk.dump gismentors_vugtk
 
 Nahrání dávky do DB:
 
          export DB=gismentors_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
-         postgis_restore.pl ruian_vugtk.dump | psql $DB
+         postgis_restore.pl gismentors_vugtk.dump | psql $DB
