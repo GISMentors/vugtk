@@ -1,10 +1,12 @@
 Poznámky k datům
 ================
 
+RUIAN 
+-----
+
 (Okresy, Obce, Ulice, StavebniObjekty; EPSG:5514)
 
-Esri Shapefile 
---------------
+**Esri Shapefile**
 
         vfr2ogr --type ST_UKSH --format Esri_Shapefile --dsn . --layer Okresy --geom OriginalniHranice
 
@@ -17,8 +19,7 @@ Poznámka ke QGISu: Ve verzi 2.4 přidá automaticky
 `+towgs84=589,76,480,0,0,0,0` (?). TODO: Pro ČR nutno upravit na
 `+towgs84=570.8,85.7,462.8,4.998,1.587,5.261,3.56`.
 
-PostGIS
--------
+**PostGIS**
 
 1) vytvoření DB
 
