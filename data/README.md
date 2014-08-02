@@ -38,4 +38,4 @@ Vytvoření dávky:
 Nahrání dávky do DB:
 
          export DB=ruian_vugtk_cpy; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
- postgis_restore.pl ruian_vugtk.dump | psql $DB
+         postgis_restore.pl ruian_vugtk.dump | psql $DB
