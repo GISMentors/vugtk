@@ -1,0 +1,106 @@
+MAP
+NAME "VUGTK skoleni"
+STATUS ON
+SIZE 800 600
+EXTENT  -743600.880000 -1036637.030000 -738206.890000 -1033085.320000
+SHAPEPATH "./"
+IMAGECOLOR 255 255 255
+#CONFIG "PROJ_LIB" "/usr/share/proj/"
+#CONFIG "MS_ERRORFILE" stderr
+#DEBUG 5
+
+WEB
+  IMAGEPATH "/var/www/tmp/" 
+  IMAGEURL "/tmp/"
+  METADATA
+    "ows_title"            "VUGTK Skoleni"
+    "ows_abstract"         "VUGTK Skoleni Open Source GIS, GISmentors.eu"
+    "wfs_onlineresource"   "http://localhost/cgi-bin/mapserv?"  ## Recommended
+    "wms_onlineresource"   "http://localhost/cgi-bin/mapserv?"  ## Recommended
+    "ows_srs"              "EPSG:4326 EPSG:5514 EPSG:32633 EPSG:3035 EPSG:3857"
+    "ows_enable_request"   "*"
+  END
+END
+
+PROJECTION
+  "init=epsg:5514"
+END
+
+LAYER
+  NAME "ortofoto_local"
+  METADATA
+    "wms_title" "Lokální ortofoto"
+  END
+  TYPE RASTER
+  STATUS ON
+  DATA "ortofoto.jpg"
+  PROJECTION
+    "init=epsg:32633"
+  END
+END
+
+LAYER
+  NAME "vrstevnice_wms"
+  METADATA
+    "wms_title" "Vrstevnice CUZK Zabaged"
+    "wms_srs" "EPSG:5514"
+    "wms_name" "GL_CA010"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/png"
+    "wms_style" ""
+  END
+  CONNECTION "http://geoportal.cuzk.cz/WMS_ZABAGED_PUB/WMService.aspx?"
+  CONNECTIONTYPE WMS
+  TYPE RASTER
+  STATUS ON
+END
+
+LAYER
+  NAME "ulice"
+  METADATA
+    "ows_title"    "Ulice"
+    "gml_featureid" "ogc_fid"
+    "gml_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  CONNECTIONTYPE POSTGIS
+  #CONNECTION "host=geo102.fsv.cvut.cz dbname=gismentors_vugtk user=gismentors password=cald08"
+  CONNECTION "dbname=gismentors_vugtk port=5433"
+  DATA "definicnicara from ulice"
+  DUMP TRUE
+  CLASS
+    NAME "Ulice"
+    STYLE
+      COLOR 0 0 155
+      OUTLINECOLOR 120 120 120
+    END
+  END
+  STATUS ON
+END # Layer
+
+LAYER
+  NAME "budovy"
+  METADATA
+    "ows_title"    "Budovy"
+    "gml_featureid" "ogc_fid"
+    "gml_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE POSTGIS
+  #CONNECTION "host=geo102.fsv.cvut.cz dbname=gismentors_vugtk user=gismentors password=cald08"
+  CONNECTION "dbname=gismentors_vugtk port=5433"
+  DATA "originalnihranice from stavebniobjekty"
+  DUMP TRUE
+  CLASS
+    NAME "Budovy"
+    STYLE
+      COLOR 255 155 0
+      OUTLINECOLOR 120 120 120
+    END
+  END
+  STATUS ON
+END # Layer
+
+END # Map File
