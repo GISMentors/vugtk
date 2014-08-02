@@ -59,3 +59,6 @@ texinfo_documents = [
 
 sys.path.append(os.path.join('..', 'sphinx-template'))
 from conf_base import *
+
+extensions = ['sphinx.ext.extlinks', 'sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
+todo_include_todos = True

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet Quick Start Guide Example</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+</head>
+<body>
+	<div id="map" style="width: 600px; height: 400px"></div>
+        <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script type="text/javascript">
+
+                // vytvoříme mapu
+		var map = L.map('map').setView([51.505, -0.09], 13);
+
+                // přidáme podkladovou dlaždicovanou vrstvu z projektu OpenStreetMap
+                var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+                var osmAttrib='Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+                var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});
+                map.addLayer(osm);
+
+                // přidáme ikonu s vyskakovací bublinou
+		L.marker([51.5, -0.09]).addTo(map)
+			.bindPopup("<b>Louny</b><br />Zde je náš okres").openPopup();
+
+                // přidáme námi vypublikovanou vrstvu WMS s leteckým snímkem
+                var ortofoto = L.tileLayer.wms("http://localhost/cgi-bin/vugtk", {
+                    layers: 'ortofoto',
+                    format: 'image/jpeg',
+                    attribution: "Letecký snímek VUGTK"
+                });
+
+                // přidáme námi vypublikovanou vrstvu WMS s vektorovými daty
+                var ortofoto = L.tileLayer.wms("http://localhost/cgi-bin/vugtk", {
+                    layers: 'vektory',
+                    format: 'image/png',
+                    transparent: true,
+                    attribution: "Vektory VUGTK"
+                });
+	</script>
+</body>
+</html>

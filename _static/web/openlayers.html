@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OpenLayers Quick Start Guide Example</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://openlayers.org/dev/OpenLayers.js"></script>
+	<script type="text/javascript">
+
+        /** 
+         * definice promennych
+         */
+        var saveStrategy; // strategie ukladani wfs-t
+        var edit;         // ovladač pro změnu vektorových prvků
+
+        /**
+         * funkce na uložení prvků pomocí protokolu wfs-t
+         */
+        var savewfs = function() {
+            if(edit.feature) {
+                console.log(edit);
+                edit.selectControl.unselectAll();
+            }
+            saveStrategy.save();
+        };
+
+        /**
+         * funkce na inicializaci mapy
+         */
+        var init = function() {
+
+                // vytvoříme objekt mapy
+		var map = new OpenLayers.Map('map')
+
+                // přidáme podkladovou dlaždicovanou vrstvu z projektu OpenStreetMap
+                var osm = new OpenLayers.Layer.OSM("OpenStreetMap");
+                map.addLayer(osm);
+
+                // nastavíme střed a přiblížení
+                map.setCenter(
+                    new OpenLayers.LonLat(-71.147, 42.472).transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                ), 13);
+
+                // přidáme námi vypublikovanou vrstvu WMS s leteckým snímkem
+                var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "http://localhost/cgi-bin/vugtk",
+                    {
+                        layers: 'ortofoto',
+                        format: 'image/jpeg',
+                        attribution: "Letecký snímek VUGTK"
+                    });
+                map.addLayer(ortofoto);
+
+                saveStrategy = new OpenLayers.Strategy.Save();
+
+                // přidáme námi vypublikovanou vrstvu WFS s vektorovými daty
+                var wfs = new OpenLayers.Layer.Vector("Budovy", {
+                    strategies: [new OpenLayers.Strategy.BBOX(), saveStrategy],
+                    projection: new OpenLayers.Projection("EPSG:4326"),
+                    visibility: true,
+                    protocol: new OpenLayers.Protocol.WFS({
+                        version: "1.1.0",
+                        srsName: "EPSG:4326",
+                        url: "http://localhost/cgi-bin/vugtk/",
+                        featureNS :  "http://opengeo.org",
+                        featureType: "restricted",
+                        geometryName: "the_geom",
+                        schema: "http://demo.opengeo.org/geoserver/wfs/DescribeFeatureType?version=1.1.0&typename=og:restricted"
+                    })
+                }); 
+                map.addLayer(wfs);
+
+                // přidání editančích ovladačů
+                var editace = new OpenLayers.Control.EditingToolbar(wfs);
+                map.addControl(editace);
+                edit = new OpenLayers.Control.ModifyFeature(wfs, {
+                    title: "Modify Feature",
+                    displayClass: "olControlModifyFeature"
+                });
+                editace.addControls([edit]);
+
+                // vytvoření tlačítka pro uložení WFS-T
+                var save = new OpenLayers.Control.Button({
+                    title: "Uložit změny",
+                    trigger: savewfs, // tato funkce je definována výše
+                    displayClass: "olControlSaveFeatures"
+                });
+
+                editace.addControls([save]);
+        };
+
+	</script>
+</head>
+<body onload="init()">
+	<div id="map" style="width: 600px; height: 400px"></div>
+</body>
+</html>
