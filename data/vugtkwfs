@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export TINYOWS_CONFIG_FILE=/home/jachym/Dokumenty/skoleni/gismentors/vugtk/data/tinyows.xml
+
+/usr/lib/cgi-bin/tinyows
