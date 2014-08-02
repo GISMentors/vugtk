@@ -37,5 +37,5 @@ Vytvoření dávky:
 
 Nahrání dávky do DB:
 
-         export DB=gismentors_vugtk; dropdb $DB ; createdb $DB
-         postgis_restore.pl gismentors_vugtk.dump | psql $DB && psql $DB -c "create extension postgis"
+         export DB=gismentors_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
+         postgis_restore.pl gismentors_vugtk.dump | psql $DB
