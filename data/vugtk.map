@@ -66,7 +66,7 @@ LAYER
   STATUS ON
   CONNECTIONTYPE POSTGIS
   #CONNECTION "host=geo102.fsv.cvut.cz dbname=gismentors_vugtk user=gismentors password=cald08"
-  CONNECTION "dbname=gismentors_vugtk port=5433"
+  CONNECTION "user=jachym password=jach dbname=gismentors_vugtk port=5433 host=localhost"
   DATA "definicnicara from ulice"
   DUMP TRUE
   CLASS
@@ -90,7 +90,7 @@ LAYER
   STATUS ON
   CONNECTIONTYPE POSTGIS
   #CONNECTION "host=geo102.fsv.cvut.cz dbname=gismentors_vugtk user=gismentors password=cald08"
-  CONNECTION "dbname=gismentors_vugtk port=5433"
+  CONNECTION "user=jachym password=jach dbname=gismentors_vugtk port=5433 host=localhost"
   DATA "originalnihranice from stavebniobjekty"
   DUMP TRUE
   CLASS

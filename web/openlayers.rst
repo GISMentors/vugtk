@@ -15,13 +15,17 @@ příklad vychází stále ještě ze současné aktuální `OpenLayers 2.13
     <../_static/web/openlayers.html>`_ a vidět tak celý jeho
     zdrojový kód.
 
+.. raw:: html
+
+    <iframe src="../_static/web/openlayers.html" width="620" height="420"></iframe>
+
 Nejdříve musíme připravit webovou stránku, aby obsahovala element s
 identifikátorem ``map``, do kterého chceme zobrazit mapu. Dále se potřebujeme
 odkázat na knihovnu OpenLayers.
 
 .. note:: Protože zobrazujeme vektorová data, je potřeba použít malý program
     instalovaný na serveru, tzv. "proxy", která požadavky směřující na vzdálený
-    server přesměruje ze serveru lokálního. Více viz :wikipedia:Cross-site_scripting
+    server přesměruje ze serveru lokálního. Více viz :wikipedia:`Cross-site_scripting <Cross-site_scripting>`
 
 .. literalinclude:: ../_static/web/openlayers.html
     :language: html
@@ -73,6 +77,10 @@ Editace pomocí protokolu WFS-T
     určité programátorské schopnosti. Tento příklad berte pouze jako
     ilustrativní, pro reálný systém je potřeba ošetřit celou řadu krajních
     případů.
+
+.. raw:: html
+
+    <iframe src="../_static/web/openlayers-wfst.html" width="620" height="420"></iframe>
 
 Editace pomocí protokolu WFS-T (transakční WFS) vyžaduje jednak nastavení na
 straně serveru a jednak přidání editačních nástrojů do projektu OpenLayers.

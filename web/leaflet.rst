@@ -10,45 +10,45 @@ nediskvalifikuje pro specifické případy použití.
     <../_static/web/leaflet.html>`_ a vidět tak celý jeho
     zdrojový kód.
 
+.. raw:: html
+
+    <iframe src="../_static/web/leaflet.html" width="620" height="420"></iframe>
+
 Nejdříve musíme připravit webovou stránku, aby obsahovala element s
 identifikátorem ``map``, do kterého chceme zobrazit mapu. Dále se potřebujeme
 odkázat na knihovnu Leaflet.
 
 .. literalinclude:: ../_static/web/leaflet.html
     :language: html
-    :lines: 7,10-11
+    :lines: 7,10,12
 
 V dalším kroku vytvoříme mapový objekt a vložíme do připraveného elementu
 ``map``:
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
-   :lines: 14-15
+   :lines: 15-16
 
-.. todo:: souřadnice 
-
-Mapě byl nastaven pohled se středem na souřadnicích 50, 14 a úroveň přiblížení
+Mapě byl nastaven pohled se středem na souřadnicích 50.14, 14.43 a úroveň přiblížení
 je 13.
 
 Dále přidáme do mapy dlaždicovanou vrstvu ``tileLayer``
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
-   :lines: 17-21
+   :lines: 18-22
 
 Dále přidáme letecký snímek námi vypublikované služby WMS s leteckým snímkem
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
-   :lines: 27-32
+   :lines: 28-33
 
-A nakonec WMS vrstvu s vektorovými daty.
-
-.. todo:: jakými daty popsat 
+A nakonec WMS vrstvu s vektorovými daty budov.
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
-   :lines: 34-40
+   :lines: 36-42
 
 .. note:: Jak bylo řečeno, Leaflet je ve své podstatě jednoduchá knihovna, resp.
     knihovna, jejíž cíl není přizpůsobit se požadovaným datům a ty "nějak"
@@ -59,7 +59,15 @@ A nakonec WMS vrstvu s vektorovými daty.
     zobrazování vektorových dat. Ty ale nemohou přicházet ve formátu GML, ale
     nejlépe ve formátu GeoJSON.
 
-.. todo:: zkusit přidat vrstvu geojson
+Přidáme vektorovou vrstvu z našeho WFS serveru. Data musí být jeprve načtena ze
+serveru a až poté můžeme vrstvu vytvořit. Nemůžeme se odkázat na WFS server
+přímo s dotazme ``GetFeature``, protože pravděpodobně narazíme na problém s
+různými doménami :wikipedia:`Cross-site_scripting <Cross-site_scripting>`, proto budeme postupovat přes
+už vytvořený skript (``proxy``).
+
+.. literalinclude:: ../_static/web/leaflet.html
+   :language: javascript
+   :lines: 45-61
 
 Další typy vrstev a vstupních dat, stejně jako detaily ke konfiguraci a
 možnostem Leafletu, si můžete prohlídnout v příkladech [#f1]_ nebo dokumentaci [#f2]_.

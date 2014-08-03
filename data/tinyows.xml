@@ -18,7 +18,7 @@
         writable="1"
         ns_prefix="tows"
         ns_uri="http://www.tinyows.org/"
-        srid="EPSG:4326,EPSG:5514,EPSG:3857,EPSG:32633,EPSG:3035"
+        srid="4326,5514,3857,32633,3035"
         name="stavebniobjekty"
         title="Budovy RUIAN" />
 
@@ -26,7 +26,7 @@
         writable="1"
         ns_prefix="tows"
         ns_uri="http://www.tinyows.org/"
-        srid="EPSG:4326,EPSG:5514,EPSG:3857,EPSG:32633,EPSG:3035"
+        srid="4326,5514,3857,32633,3035"
         name="ulice"
         title="Ulice RUIAN" />
 

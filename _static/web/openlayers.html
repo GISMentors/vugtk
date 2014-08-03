@@ -28,16 +28,17 @@
                 ), 13);
 
                 // přidáme námi vypublikovanou vrstvu WMS s leteckým snímkem
-                var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "http://localhost/cgi-bin/vugtk",
+                var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "http://localhost/cgi-bin/vugtkwms",
                     {
-                        layers: 'ortofoto',
+                        layers: 'ortofoto_local',
                         format: 'image/jpeg',
-                        attribution: "Letecký snímek VUGTK"
+                        projection: new OpenLaeyrs.Projection("EPSG:3857")
                     },
                     {
-                        isBaseLayer: false
+                        attribution: "Letecký snímek VUGTK"
                     });
                 map.addLayer(ortofoto);
+
 
                 // přidáme námi vypublikovanou vrstvu WFS s vektorovými daty
                 var wfs = new OpenLayers.Layer.Vector("Budovy", {
