@@ -19,7 +19,8 @@ viz http://freegis.fsv.cvut.cz/gwiki/RUIAN_/_OGR-VFR#Konverze_do_Esri_Shapefile
 
 1) vytvoření DB
 
-          export DB=gismentors_vugtk; dropdb $DB ; createdb $DB && psql $DB -c "create extension postgis"
+          export DB=gismentors_vugtk; dropdb $DB ; createdb $DB && \
+          psql $DB -c "create extension postgis; create extension postgis_topology"
 
 2) Import ST (Okresy)
 
@@ -35,7 +36,7 @@ Poznámka: Definice EPSG:5514 v DB obsahuje `+towgs84=570.8,85.7,462.8,4.998,1.5
 
 Vytvoření dávky:
 
-          pg_dump -Fc -b -v -O -x -Z 9 -f gismentors_vugtk.dump gismentors_vugtk
+         pg_dump -Fc -b -v -Z 9 -f gismentors_vugtk.dump gismentors_vugtk
 
 Nahrání dávky do DB:
 
