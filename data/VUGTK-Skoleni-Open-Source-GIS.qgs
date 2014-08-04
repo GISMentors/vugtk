@@ -1,6 +1,6 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="VUGTK Skoleni Open Source GIS" version="2.5.0-Master">
-    <title>VUGTK Skoleni Open Source GIS</title>
+<qgis projectname="VUGTK-Skoleni-Open-Source-GIS" version="2.5.0-Master">
+    <title>VUGTK-Skoleni-Open-Source-GIS</title>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="tows_ulice20140802233459562" name="ulice - WFS-T">
@@ -23,10 +23,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-742878.42653423291631043</xmin>
-            <ymin>-1038778.32295442838221788</ymin>
-            <xmax>-738366.60360433696769178</xmax>
-            <ymax>-1035310.48319744598120451</ymax>
+            <xmin>-916406.31024999998044223</xmin>
+            <ymin>-1234597.31099999998696148</ymin>
+            <xmax>-419905.39974999998230487</xmax>
+            <ymax>-927935.10899999993853271</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -128,7 +128,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>obce20140802212827934</id>
-            <datasource>./obce.shp</datasource>
+            <datasource>./shp/obce.shp</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -154,30 +154,14 @@
             <renderer-v2 attr="NAZEV" symbollevels="0" type="categorizedSymbol">
                 <categories>
                     <category render="true" symbol="0" value="Zdiby" label="Zdiby"/>
-                    <category render="false" symbol="1" value="" label=""/>
                 </categories>
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
-                            <prop k="color" v="197,139,248,255"/>
-                            <prop k="color_border" v="0,0,0,255"/>
-                            <prop k="joinstyle" v="bevel"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="style" v="solid"/>
-                            <prop k="style_border" v="solid"/>
-                            <prop k="width_border" v="0.26"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="fill" name="1">
-                        <layer pass="0" class="SimpleFill" locked="0">
-                            <prop k="border_width_map_unit_scale" v="0,0"/>
-                            <prop k="border_width_unit" v="MM"/>
-                            <prop k="color" v="177,170,87,255"/>
-                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="color" v="255,255,0,255"/>
+                            <prop k="color_border" v="255,0,0,255"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
@@ -461,7 +445,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>okresy20140802212827912</id>
-            <datasource>./okresy.shp</datasource>
+            <datasource>./shp/okresy.shp</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -1974,7 +1958,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>stavebniobjekty20140802222716165</id>
-            <datasource>PG:dbname='gismentors_vugtk' host='localhost' port='5433' user='jachym' password='jach'|layername=stavebniobjekty</datasource>
+            <datasource>PG:dbname='gismentors_vugtk'|layername=stavebniobjekty</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
