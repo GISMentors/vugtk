@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export MS_MAPFILE=/home/jachym/Dokumenty/skoleni/gismentors/vugtk/data/vugtk.map
+
+/usr/lib/cgi-bin/mapserv

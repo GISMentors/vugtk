@@ -61,4 +61,7 @@ sys.path.append(os.path.join('..', 'sphinx-template'))
 from conf_base import *
 
 extensions = ['sphinx.ext.extlinks', 'sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
+extlinks = {'grasscmd': ('http://grass.osgeo.org/grass70/manuals/%s.html', ''),
+            'wikipedia': ('http://cs.wikipedia.org/wiki/%s', '')}
+
 todo_include_todos = True

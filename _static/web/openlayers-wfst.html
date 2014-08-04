@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OpenLayers WFS-T Example</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://geoportal.gov.cz/wwwlibs/proj4js/proj4js.js" type="text/javascript"></script>
+        <script src="http://geoportal.gov.cz/wwwlibs/proj4js/projCode/krovak.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            Proj4js.defs["EPSG:5514"] = "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +pm=greenwich +units=m +no_defs +towgs84=570.8,85.7,462.8,4.998,1.587,5.261,3.56";
+            Proj4js.defs["EPSG:3857"] = "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs";
+        </script>
+        <script type="text/javascript" src="http://dev.doctor/ol2/lib/OpenLayers.js"></script>
+	<script type="text/javascript">
+
+        /**
+         * funkce pro zobrazení zprávy
+         */
+        function showMsg(szMessage) {
+        document.getElementById("message").innerHTML = szMessage;
+        setTimeout(
+            "document.getElementById('message').innerHTML = ''",2000);
+        }
+
+        /**
+         * funkce pro zobrazení úspěšné zprávy
+         */
+        function showSuccessMsg(){
+            showMsg("Transkace byla úspěšně provedena");
+        };
+
+        /**
+         * funkce pro zobrazení chybové zprávy
+         */
+        function showFailureMsg(){
+            showMsg("Při zpracování transakce se vyskytla chyba.");
+        };
+
+        var map, wfs;
+        /**
+         * funkce na inicializaci mapy
+         */
+        var init = function() {
+                OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+
+                // vytvoříme objekt mapy
+                map = new OpenLayers.Map('map', {
+                        projection: new OpenLayers.Projection("EPSG:3857")
+                });
+
+                // přidáme podkladovou dlaždicovanou vrstvu z projektu OpenStreetMap
+                var osm = new OpenLayers.Layer.OSM("OpenStreetMap",
+                        undefined,
+                        {
+                            projection: new OpenLayers.Projection("EPSG:3857")
+                        });
+                map.addLayer(osm);
+
+                // nastavíme střed a přiblížení
+                map.setCenter(
+                    new OpenLayers.LonLat(14.429517, 50.162900).transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                ), 13);
+
+                // přidáme námi vypublikovanou vrstvu WMS s leteckým snímkem
+                var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "http://localhost/cgi-bin/vugtkwms",
+                    {
+                        layers: 'ortofoto_local',
+                        format: 'image/jpeg'
+                    },
+                    {
+                        attribution: "Letecký snímek VUGTK"
+                    });
+                map.addLayer(ortofoto);
+
+                // definujeme strategii save a funkce, které se zavolají při
+                // úspěšně a neúspěšně zpracované transkaci
+                var saveStrategy = new OpenLayers.Strategy.Save();
+                saveStrategy.events.register("success", '', showSuccessMsg);
+                saveStrategy.events.register("fail", '', showFailureMsg);
+
+                // přidáme námi vypublikovanou vrstvu WFS s vektorovými daty
+                wfs = new OpenLayers.Layer.Vector("Budovy", {
+                    strategies: [new OpenLayers.Strategy.BBOX(), saveStrategy],
+                    projection: new OpenLayers.Projection("EPSG:5514"),
+                    protocol: new OpenLayers.Protocol.WFS({
+                    version: "1.1.0",
+                    srsName: "EPSG:5514",
+                    url: "http://localhost/cgi-bin/vugtkwfs",
+                    featureNS :  "http://www.tinyows.org/",
+                    featureType: "stavebniobjekty",
+                    geometryName: "originalnihranice",
+                    schema: "http://localhost/cgi-bin/vugtkwfs?service=wfs&request=DescribeFeatureType&version=1.1.0&typename=tows:stavebniobjekty"
+                    })
+                });
+                map.addLayer(wfs);
+
+                map.addControl(new OpenLayers.Control.LayerSwitcher());
+
+                // přidání panelu s tlačítky pro editaci
+                var editPanel = new OpenLayers.Control.EditingToolbar(wfs);
+                map.addControl(editPanel);
+
+                // přidání tlačítka na modifikaci existujících elementů v mapě
+                var modify = new OpenLayers.Control.ModifyFeature(wfs, {
+                    title: "Modify Feature",
+                    displayClass: "olControlModifyFeature"
+                });
+                editPanel.addControls([modify]);
+
+                /**
+                 * funkce která uloží data na server
+                 */
+                var savewfs = function() {
+                    //if(modify.feature) {
+                    //    modify.selectControl.unselectAll();
+                    //}
+                    saveStrategy.save();
+                };
+
+                // vytvoření tlačítka pro uložení WFS-T
+                var save = new OpenLayers.Control.Button({
+                    title: "Uložit změny",
+                    trigger: savewfs, // tato funkce je definována výše
+                    displayClass: "olControlSaveFeatures"
+                });
+
+                editPanel.addControls([save]);
+        };
+
+	</script>
+</head>
+<body onload="init()">
+	<div id="map" style="width: 600px; height: 400px"></div>
+	<div id="message"></div>
+</body>
+</html>

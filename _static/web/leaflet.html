@@ -8,36 +8,67 @@
 </head>
 <body>
 	<div id="map" style="width: 600px; height: 400px"></div>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 	<script type="text/javascript">
 
                 // vytvoříme mapu
-		var map = L.map('map').setView([51.505, -0.09], 13);
+		var map = L.map('map').setView([50.162900, 14.429517], 12);
 
                 // přidáme podkladovou dlaždicovanou vrstvu z projektu OpenStreetMap
                 var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
                 var osmAttrib='Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-                var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});
+                var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 18, attribution: osmAttrib});
                 map.addLayer(osm);
 
                 // přidáme ikonu s vyskakovací bublinou
-		L.marker([51.5, -0.09]).addTo(map)
-			.bindPopup("<b>Louny</b><br />Zde je náš okres").openPopup();
+		L.marker([50.162900, 14.429517]).addTo(map)
+			.bindPopup("<b>Louny</b><br />Zde je náš okres");
 
                 // přidáme námi vypublikovanou vrstvu WMS s leteckým snímkem
-                var ortofoto = L.tileLayer.wms("http://localhost/cgi-bin/vugtk", {
-                    layers: 'ortofoto',
+                var ortofoto = L.tileLayer.wms("http://localhost/cgi-bin/vugtkwms", {
+                    layers: 'ortofoto_local',
                     format: 'image/jpeg',
+
                     attribution: "Letecký snímek VUGTK"
                 });
 
                 // přidáme námi vypublikovanou vrstvu WMS s vektorovými daty
-                var ortofoto = L.tileLayer.wms("http://localhost/cgi-bin/vugtk", {
-                    layers: 'vektory',
+                var budovy = L.tileLayer.wms("http://localhost/cgi-bin/vugtkwms", {
+                    layers: 'budovy',
                     format: 'image/png',
                     transparent: true,
                     attribution: "Vektory VUGTK"
                 });
+
+
+                // přidání vrstvy GeoJSON - z našeho WFS Serveru
+                $.ajax({
+                  dataType: "json",
+                  type: "GET",
+                  // použijeme proxy.cgi, pro dotaz na jiný server
+                  url: "/cgi-bin/proxy.cgi?url=http%3A//localhost/cgi-bin/vugtkwfs%3Fservice%3Dwfs%26version%3D1.1.0%26request%3Dgetfeature%26typename%3Dtows%3Aulice%26outputformat%3Dapplication/json%26srsname%3DEPSG%3A4326",
+
+                  success: function (response) {
+                      // je-li dotaz na server úspěšný, můžeme vytvořit vrstvu
+                      var ulice = L.geoJson(response, {
+                         style: function (feature) {
+                            return {color: "#FF0000"};
+                        }
+                      });
+                      layerSwitcher.addOverlay(ulice, "RUAIN Ulice");
+                }
+              });
+
+              // Přepínač vrstev
+              var layerSwitcher = L.control.layers({
+                  "Topografická": osm,
+                  "Letecká": ortofoto
+                },
+                {
+                  "RUIAN Stavební objekty": budovy
+              });
+              map.addControl(layerSwitcher);
 	</script>
 </body>
 </html>

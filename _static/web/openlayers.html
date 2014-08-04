@@ -7,27 +7,11 @@
         <script type="text/javascript" src="http://openlayers.org/dev/OpenLayers.js"></script>
 	<script type="text/javascript">
 
-        /** 
-         * definice promennych
-         */
-        var saveStrategy; // strategie ukladani wfs-t
-        var edit;         // ovladač pro změnu vektorových prvků
-
-        /**
-         * funkce na uložení prvků pomocí protokolu wfs-t
-         */
-        var savewfs = function() {
-            if(edit.feature) {
-                console.log(edit);
-                edit.selectControl.unselectAll();
-            }
-            saveStrategy.save();
-        };
-
         /**
          * funkce na inicializaci mapy
          */
         var init = function() {
+                OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
 
                 // vytvoříme objekt mapy
 		var map = new OpenLayers.Map('map')
@@ -38,56 +22,41 @@
 
                 // nastavíme střed a přiblížení
                 map.setCenter(
-                    new OpenLayers.LonLat(-71.147, 42.472).transform(
+                    new OpenLayers.LonLat(14.429517, 50.162900).transform(
                     new OpenLayers.Projection("EPSG:4326"),
                     map.getProjectionObject()
                 ), 13);
 
                 // přidáme námi vypublikovanou vrstvu WMS s leteckým snímkem
-                var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "http://localhost/cgi-bin/vugtk",
+                var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "http://localhost/cgi-bin/vugtkwms",
                     {
-                        layers: 'ortofoto',
+                        layers: 'ortofoto_local',
                         format: 'image/jpeg',
+                        projection: new OpenLaeyrs.Projection("EPSG:3857")
+                    },
+                    {
                         attribution: "Letecký snímek VUGTK"
                     });
                 map.addLayer(ortofoto);
 
-                saveStrategy = new OpenLayers.Strategy.Save();
 
                 // přidáme námi vypublikovanou vrstvu WFS s vektorovými daty
                 var wfs = new OpenLayers.Layer.Vector("Budovy", {
-                    strategies: [new OpenLayers.Strategy.BBOX(), saveStrategy],
-                    projection: new OpenLayers.Projection("EPSG:4326"),
-                    visibility: true,
+                    strategies: [new OpenLayers.Strategy.BBOX()],
+                    projection: new OpenLayers.Projection("EPSG:3857"),
                     protocol: new OpenLayers.Protocol.WFS({
-                        version: "1.1.0",
-                        srsName: "EPSG:4326",
-                        url: "http://localhost/cgi-bin/vugtk/",
-                        featureNS :  "http://opengeo.org",
-                        featureType: "restricted",
-                        geometryName: "the_geom",
-                        schema: "http://demo.opengeo.org/geoserver/wfs/DescribeFeatureType?version=1.1.0&typename=og:restricted"
+                    version: "1.1.0",
+                    srsName: "EPSG:3857",
+                    url: "http://localhost/cgi-bin/vugtkwfs",
+                    featureNS :  "http://www.tinyows.org/",
+                    featureType: "stavebniobjekty",
+                    geometryName: "originalnihranice",
+                    schema: "http://localhost/cgi-bin/vugtkwfs?service=wfs&request=DescribeFeatureType&version=1.1.0&typename=tows:stavebniobjekty"
                     })
-                }); 
+                });
                 map.addLayer(wfs);
 
-                // přidání editančích ovladačů
-                var editace = new OpenLayers.Control.EditingToolbar(wfs);
-                map.addControl(editace);
-                edit = new OpenLayers.Control.ModifyFeature(wfs, {
-                    title: "Modify Feature",
-                    displayClass: "olControlModifyFeature"
-                });
-                editace.addControls([edit]);
-
-                // vytvoření tlačítka pro uložení WFS-T
-                var save = new OpenLayers.Control.Button({
-                    title: "Uložit změny",
-                    trigger: savewfs, // tato funkce je definována výše
-                    displayClass: "olControlSaveFeatures"
-                });
-
-                editace.addControls([save]);
+                map.addControl(new OpenLayers.Control.LayerSwitcher());
         };
 
 	</script>
