@@ -36,7 +36,7 @@ Poznámka: Definice EPSG:5514 v DB obsahuje `+towgs84=570.8,85.7,462.8,4.998,1.5
 
 Vytvoření dávky:
 
-         pg_dump -Fc -b -v -Z 9 -f gismentors_vugtk.dump gismentors_vugtk
+         pg_dump -Fc -b -v -Z 9 -O -f postgis/gismentors_vugtk.dump gismentors_vugtk
 
 Nahrání dávky do DB:
 
