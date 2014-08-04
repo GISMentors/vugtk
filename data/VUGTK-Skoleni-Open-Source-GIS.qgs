@@ -1,11 +1,8 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="VUGTK-Skoleni-Open-Source-GIS" version="2.5.0-Master">
+<qgis projectname="VUGTK-Skoleni-Open-Source-GIS" version="2.4.0-Chugiak">
     <title>VUGTK-Skoleni-Open-Source-GIS</title>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="tows_ulice20140802233459562" name="ulice - WFS-T">
-            <customproperties/>
-        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="stavebniobjekty20140802222716165" name="stavebniobjekty - PostGIS">
             <customproperties/>
         </layer-tree-layer>
@@ -53,19 +50,13 @@
     </mapcanvas>
     <layer-tree-canvas>
         <custom-order enabled="0">
-            <item>okresy20140802212827912</item>
-            <item>obce20140802212827934</item>
-            <item>Ortofoto_WMS20140802213102323</item>
             <item>stavebniobjekty20140802222716165</item>
-            <item>tows_ulice20140802233459562</item>
+            <item>obce20140802212827934</item>
+            <item>okresy20140802212827912</item>
+            <item>Ortofoto_WMS20140802213102323</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ulice - WFS-T" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="tows_ulice20140802233459562" visible="1"/>
-            </filegroup>
-        </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="stavebniobjekty - PostGIS" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="stavebniobjekty20140802222716165" visible="0"/>
@@ -87,7 +78,7 @@
             </filegroup>
         </legendlayer>
     </legend>
-    <projectlayers layercount="5">
+    <projectlayers layercount="4">
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>Ortofoto_WMS20140802213102323</id>
             <datasource>IgnoreGetMapUrl=1&amp;crs=EPSG:5514&amp;dpiMode=all&amp;featureCount=10&amp;format=image/jpeg&amp;layers=GR_ORTFOTORGB&amp;maxHeight=512&amp;maxWidth=512&amp;styles=&amp;url=http://geoportal.cuzk.cz/WMS_ORTOFOTO_PUB/WMService.aspx</datasource>
@@ -150,10 +141,9 @@
             <provider encoding="UTF-8">ogr</provider>
             <previewExpression></previewExpression>
             <vectorjoins/>
-            <expressionfields/>
             <renderer-v2 attr="NAZEV" symbollevels="0" type="categorizedSymbol">
                 <categories>
-                    <category render="true" symbol="0" value="Zdiby" label="Zdiby"/>
+                    <category symbol="0" value="Zdiby" label="Zdiby"/>
                 </categories>
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
@@ -360,6 +350,80 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="OGC_FID">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="GML_ID">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="KOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="NAZEV">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="NESPRAVNY">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="STATUSKOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="OKRESKOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="POUKOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="PLATIOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="PLATIDO">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="IDTRANSAKC">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="GLOBALNIID">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="MLUVNICKEC">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="MLUVNIC_01">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="MLUVNIC_02">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="MLUVNIC_03">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="MLUVNIC_04">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="VLAJKATEXT">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="VLAJKAOBRA">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="ZNAKTEXT">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="ZNAKOBRAZE">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="CLENENISMR">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="CLENENISMT">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="NUTSLAU">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
@@ -368,80 +432,6 @@
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="OGC_FID">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="GML_ID">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="KOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="NAZEV">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="NESPRAVNY">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="STATUSKOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="OKRESKOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="POUKOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="PLATIOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="PLATIDO">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="IDTRANSAKC">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="GLOBALNIID">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="MLUVNICKEC">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="MLUVNIC_01">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="MLUVNIC_02">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="MLUVNIC_03">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="MLUVNIC_04">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="VLAJKATEXT">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="VLAJKAOBRA">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="ZNAKTEXT">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="ZNAKOBRAZE">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="CLENENISMR">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="CLENENISMT">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="NUTSLAU">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>okresy20140802212827912</id>
@@ -467,87 +457,86 @@
             <provider encoding="UTF-8">ogr</provider>
             <previewExpression></previewExpression>
             <vectorjoins/>
-            <expressionfields/>
             <renderer-v2 attr="NAZEV" symbollevels="0" type="categorizedSymbol">
                 <categories>
-                    <category render="true" symbol="0" value="Benešov" label="Benešov"/>
-                    <category render="true" symbol="1" value="Beroun" label="Beroun"/>
-                    <category render="true" symbol="2" value="Blansko" label="Blansko"/>
-                    <category render="true" symbol="3" value="Brno-město" label="Brno-město"/>
-                    <category render="true" symbol="4" value="Brno-venkov" label="Brno-venkov"/>
-                    <category render="true" symbol="5" value="Bruntál" label="Bruntál"/>
-                    <category render="true" symbol="6" value="Břeclav" label="Břeclav"/>
-                    <category render="true" symbol="7" value="Česká Lípa" label="Česká Lípa"/>
-                    <category render="true" symbol="8" value="České Budějovice" label="České Budějovice"/>
-                    <category render="true" symbol="9" value="Český Krumlov" label="Český Krumlov"/>
-                    <category render="true" symbol="10" value="Děčín" label="Děčín"/>
-                    <category render="true" symbol="11" value="Domažlice" label="Domažlice"/>
-                    <category render="true" symbol="12" value="Frýdek-Místek" label="Frýdek-Místek"/>
-                    <category render="true" symbol="13" value="Havlíčkův Brod" label="Havlíčkův Brod"/>
-                    <category render="true" symbol="14" value="Hlavní město Praha" label="Hlavní město Praha"/>
-                    <category render="true" symbol="15" value="Hodonín" label="Hodonín"/>
-                    <category render="true" symbol="16" value="Hradec Králové" label="Hradec Králové"/>
-                    <category render="true" symbol="17" value="Cheb" label="Cheb"/>
-                    <category render="true" symbol="18" value="Chomutov" label="Chomutov"/>
-                    <category render="true" symbol="19" value="Chrudim" label="Chrudim"/>
-                    <category render="true" symbol="20" value="Jablonec nad Nisou" label="Jablonec nad Nisou"/>
-                    <category render="true" symbol="21" value="Jeseník" label="Jeseník"/>
-                    <category render="true" symbol="22" value="Jičín" label="Jičín"/>
-                    <category render="true" symbol="23" value="Jihlava" label="Jihlava"/>
-                    <category render="true" symbol="24" value="Jindřichův Hradec" label="Jindřichův Hradec"/>
-                    <category render="true" symbol="25" value="Karlovy Vary" label="Karlovy Vary"/>
-                    <category render="true" symbol="26" value="Karviná" label="Karviná"/>
-                    <category render="true" symbol="27" value="Kladno" label="Kladno"/>
-                    <category render="true" symbol="28" value="Klatovy" label="Klatovy"/>
-                    <category render="true" symbol="29" value="Kolín" label="Kolín"/>
-                    <category render="true" symbol="30" value="Kroměříž" label="Kroměříž"/>
-                    <category render="true" symbol="31" value="Kutná Hora" label="Kutná Hora"/>
-                    <category render="true" symbol="32" value="Liberec" label="Liberec"/>
-                    <category render="true" symbol="33" value="Litoměřice" label="Litoměřice"/>
-                    <category render="true" symbol="34" value="Louny" label="Louny"/>
-                    <category render="true" symbol="35" value="Mělník" label="Mělník"/>
-                    <category render="true" symbol="36" value="Mladá Boleslav" label="Mladá Boleslav"/>
-                    <category render="true" symbol="37" value="Most" label="Most"/>
-                    <category render="true" symbol="38" value="Náchod" label="Náchod"/>
-                    <category render="true" symbol="39" value="Nový Jičín" label="Nový Jičín"/>
-                    <category render="true" symbol="40" value="Nymburk" label="Nymburk"/>
-                    <category render="true" symbol="41" value="Olomouc" label="Olomouc"/>
-                    <category render="true" symbol="42" value="Opava" label="Opava"/>
-                    <category render="true" symbol="43" value="Ostrava-město" label="Ostrava-město"/>
-                    <category render="true" symbol="44" value="Pardubice" label="Pardubice"/>
-                    <category render="true" symbol="45" value="Pelhřimov" label="Pelhřimov"/>
-                    <category render="true" symbol="46" value="Písek" label="Písek"/>
-                    <category render="true" symbol="47" value="Plzeň-jih" label="Plzeň-jih"/>
-                    <category render="true" symbol="48" value="Plzeň-město" label="Plzeň-město"/>
-                    <category render="true" symbol="49" value="Plzeň-sever" label="Plzeň-sever"/>
-                    <category render="true" symbol="50" value="Praha-východ" label="Praha-východ"/>
-                    <category render="true" symbol="51" value="Praha-západ" label="Praha-západ"/>
-                    <category render="true" symbol="52" value="Prachatice" label="Prachatice"/>
-                    <category render="true" symbol="53" value="Prostějov" label="Prostějov"/>
-                    <category render="true" symbol="54" value="Přerov" label="Přerov"/>
-                    <category render="true" symbol="55" value="Příbram" label="Příbram"/>
-                    <category render="true" symbol="56" value="Rakovník" label="Rakovník"/>
-                    <category render="true" symbol="57" value="Rokycany" label="Rokycany"/>
-                    <category render="true" symbol="58" value="Rychnov nad Kněžnou" label="Rychnov nad Kněžnou"/>
-                    <category render="true" symbol="59" value="Semily" label="Semily"/>
-                    <category render="true" symbol="60" value="Sokolov" label="Sokolov"/>
-                    <category render="true" symbol="61" value="Strakonice" label="Strakonice"/>
-                    <category render="true" symbol="62" value="Svitavy" label="Svitavy"/>
-                    <category render="true" symbol="63" value="Šumperk" label="Šumperk"/>
-                    <category render="true" symbol="64" value="Tábor" label="Tábor"/>
-                    <category render="true" symbol="65" value="Tachov" label="Tachov"/>
-                    <category render="true" symbol="66" value="Teplice" label="Teplice"/>
-                    <category render="true" symbol="67" value="Trutnov" label="Trutnov"/>
-                    <category render="true" symbol="68" value="Třebíč" label="Třebíč"/>
-                    <category render="true" symbol="69" value="Uherské Hradiště" label="Uherské Hradiště"/>
-                    <category render="true" symbol="70" value="Ústí nad Labem" label="Ústí nad Labem"/>
-                    <category render="true" symbol="71" value="Ústí nad Orlicí" label="Ústí nad Orlicí"/>
-                    <category render="true" symbol="72" value="Vsetín" label="Vsetín"/>
-                    <category render="true" symbol="73" value="Vyškov" label="Vyškov"/>
-                    <category render="true" symbol="74" value="Zlín" label="Zlín"/>
-                    <category render="true" symbol="75" value="Znojmo" label="Znojmo"/>
-                    <category render="true" symbol="76" value="Žďár nad Sázavou" label="Žďár nad Sázavou"/>
-                    <category render="true" symbol="77" value="" label=""/>
+                    <category symbol="0" value="Benešov" label="Benešov"/>
+                    <category symbol="1" value="Beroun" label="Beroun"/>
+                    <category symbol="2" value="Blansko" label="Blansko"/>
+                    <category symbol="3" value="Brno-město" label="Brno-město"/>
+                    <category symbol="4" value="Brno-venkov" label="Brno-venkov"/>
+                    <category symbol="5" value="Bruntál" label="Bruntál"/>
+                    <category symbol="6" value="Břeclav" label="Břeclav"/>
+                    <category symbol="7" value="Česká Lípa" label="Česká Lípa"/>
+                    <category symbol="8" value="České Budějovice" label="České Budějovice"/>
+                    <category symbol="9" value="Český Krumlov" label="Český Krumlov"/>
+                    <category symbol="10" value="Děčín" label="Děčín"/>
+                    <category symbol="11" value="Domažlice" label="Domažlice"/>
+                    <category symbol="12" value="Frýdek-Místek" label="Frýdek-Místek"/>
+                    <category symbol="13" value="Havlíčkův Brod" label="Havlíčkův Brod"/>
+                    <category symbol="14" value="Hlavní město Praha" label="Hlavní město Praha"/>
+                    <category symbol="15" value="Hodonín" label="Hodonín"/>
+                    <category symbol="16" value="Hradec Králové" label="Hradec Králové"/>
+                    <category symbol="17" value="Cheb" label="Cheb"/>
+                    <category symbol="18" value="Chomutov" label="Chomutov"/>
+                    <category symbol="19" value="Chrudim" label="Chrudim"/>
+                    <category symbol="20" value="Jablonec nad Nisou" label="Jablonec nad Nisou"/>
+                    <category symbol="21" value="Jeseník" label="Jeseník"/>
+                    <category symbol="22" value="Jičín" label="Jičín"/>
+                    <category symbol="23" value="Jihlava" label="Jihlava"/>
+                    <category symbol="24" value="Jindřichův Hradec" label="Jindřichův Hradec"/>
+                    <category symbol="25" value="Karlovy Vary" label="Karlovy Vary"/>
+                    <category symbol="26" value="Karviná" label="Karviná"/>
+                    <category symbol="27" value="Kladno" label="Kladno"/>
+                    <category symbol="28" value="Klatovy" label="Klatovy"/>
+                    <category symbol="29" value="Kolín" label="Kolín"/>
+                    <category symbol="30" value="Kroměříž" label="Kroměříž"/>
+                    <category symbol="31" value="Kutná Hora" label="Kutná Hora"/>
+                    <category symbol="32" value="Liberec" label="Liberec"/>
+                    <category symbol="33" value="Litoměřice" label="Litoměřice"/>
+                    <category symbol="34" value="Louny" label="Louny"/>
+                    <category symbol="35" value="Mělník" label="Mělník"/>
+                    <category symbol="36" value="Mladá Boleslav" label="Mladá Boleslav"/>
+                    <category symbol="37" value="Most" label="Most"/>
+                    <category symbol="38" value="Náchod" label="Náchod"/>
+                    <category symbol="39" value="Nový Jičín" label="Nový Jičín"/>
+                    <category symbol="40" value="Nymburk" label="Nymburk"/>
+                    <category symbol="41" value="Olomouc" label="Olomouc"/>
+                    <category symbol="42" value="Opava" label="Opava"/>
+                    <category symbol="43" value="Ostrava-město" label="Ostrava-město"/>
+                    <category symbol="44" value="Pardubice" label="Pardubice"/>
+                    <category symbol="45" value="Pelhřimov" label="Pelhřimov"/>
+                    <category symbol="46" value="Písek" label="Písek"/>
+                    <category symbol="47" value="Plzeň-jih" label="Plzeň-jih"/>
+                    <category symbol="48" value="Plzeň-město" label="Plzeň-město"/>
+                    <category symbol="49" value="Plzeň-sever" label="Plzeň-sever"/>
+                    <category symbol="50" value="Praha-východ" label="Praha-východ"/>
+                    <category symbol="51" value="Praha-západ" label="Praha-západ"/>
+                    <category symbol="52" value="Prachatice" label="Prachatice"/>
+                    <category symbol="53" value="Prostějov" label="Prostějov"/>
+                    <category symbol="54" value="Přerov" label="Přerov"/>
+                    <category symbol="55" value="Příbram" label="Příbram"/>
+                    <category symbol="56" value="Rakovník" label="Rakovník"/>
+                    <category symbol="57" value="Rokycany" label="Rokycany"/>
+                    <category symbol="58" value="Rychnov nad Kněžnou" label="Rychnov nad Kněžnou"/>
+                    <category symbol="59" value="Semily" label="Semily"/>
+                    <category symbol="60" value="Sokolov" label="Sokolov"/>
+                    <category symbol="61" value="Strakonice" label="Strakonice"/>
+                    <category symbol="62" value="Svitavy" label="Svitavy"/>
+                    <category symbol="63" value="Šumperk" label="Šumperk"/>
+                    <category symbol="64" value="Tábor" label="Tábor"/>
+                    <category symbol="65" value="Tachov" label="Tachov"/>
+                    <category symbol="66" value="Teplice" label="Teplice"/>
+                    <category symbol="67" value="Trutnov" label="Trutnov"/>
+                    <category symbol="68" value="Třebíč" label="Třebíč"/>
+                    <category symbol="69" value="Uherské Hradiště" label="Uherské Hradiště"/>
+                    <category symbol="70" value="Ústí nad Labem" label="Ústí nad Labem"/>
+                    <category symbol="71" value="Ústí nad Orlicí" label="Ústí nad Orlicí"/>
+                    <category symbol="72" value="Vsetín" label="Vsetín"/>
+                    <category symbol="73" value="Vyškov" label="Vyškov"/>
+                    <category symbol="74" value="Zlín" label="Zlín"/>
+                    <category symbol="75" value="Znojmo" label="Znojmo"/>
+                    <category symbol="76" value="Žďár nad Sázavou" label="Žďár nad Sázavou"/>
+                    <category symbol="77" value="" label=""/>
                 </categories>
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
@@ -1909,6 +1898,44 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="OGC_FID">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="GML_ID">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="KOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="NAZEV">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="NESPRAVNY">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="KRAJKOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="VUSCKOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="PLATIOD">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="PLATIDO">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="IDTRANSAKC">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="GLOBALNIID">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="NUTSLAU">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
@@ -1917,44 +1944,6 @@
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="OGC_FID">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="GML_ID">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="KOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="NAZEV">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="NESPRAVNY">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="KRAJKOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="VUSCKOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="PLATIOD">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="PLATIDO">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="IDTRANSAKC">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="GLOBALNIID">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="NUTSLAU">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>stavebniobjekty20140802222716165</id>
@@ -1980,27 +1969,26 @@
             <provider encoding="UTF-8">ogr</provider>
             <previewExpression></previewExpression>
             <vectorjoins/>
-            <expressionfields/>
             <renderer-v2 attr="zpusobvyuzitikod" symbollevels="0" type="categorizedSymbol">
                 <categories>
-                    <category render="true" symbol="0" value="0" label="0"/>
-                    <category render="true" symbol="1" value="1" label="1"/>
-                    <category render="true" symbol="2" value="3" label="3"/>
-                    <category render="true" symbol="3" value="5" label="5"/>
-                    <category render="true" symbol="4" value="6" label="6"/>
-                    <category render="true" symbol="5" value="7" label="7"/>
-                    <category render="true" symbol="6" value="8" label="8"/>
-                    <category render="true" symbol="7" value="10" label="10"/>
-                    <category render="true" symbol="8" value="11" label="11"/>
-                    <category render="true" symbol="9" value="12" label="12"/>
-                    <category render="true" symbol="10" value="13" label="13"/>
-                    <category render="true" symbol="11" value="14" label="14"/>
-                    <category render="true" symbol="12" value="15" label="15"/>
-                    <category render="true" symbol="13" value="16" label="16"/>
-                    <category render="true" symbol="14" value="18" label="18"/>
-                    <category render="true" symbol="15" value="19" label="19"/>
-                    <category render="true" symbol="16" value="20" label="20"/>
-                    <category render="true" symbol="17" value="" label=""/>
+                    <category symbol="0" value="0" label="0"/>
+                    <category symbol="1" value="1" label="1"/>
+                    <category symbol="2" value="3" label="3"/>
+                    <category symbol="3" value="5" label="5"/>
+                    <category symbol="4" value="6" label="6"/>
+                    <category symbol="5" value="7" label="7"/>
+                    <category symbol="6" value="8" label="8"/>
+                    <category symbol="7" value="10" label="10"/>
+                    <category symbol="8" value="11" label="11"/>
+                    <category symbol="9" value="12" label="12"/>
+                    <category symbol="10" value="13" label="13"/>
+                    <category symbol="11" value="14" label="14"/>
+                    <category symbol="12" value="15" label="15"/>
+                    <category symbol="13" value="16" label="16"/>
+                    <category symbol="14" value="18" label="18"/>
+                    <category symbol="15" value="19" label="19"/>
+                    <category symbol="16" value="20" label="20"/>
+                    <category symbol="17" value="" label=""/>
                 </categories>
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
@@ -2462,6 +2450,101 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="gml_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="kod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="nespravny">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="cislodomovni">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="identifikacniparcelaid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="typstavebnihoobjektukod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="zpusobvyuzitikod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="castobcekod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="momckod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="platiod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="platido">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="idtransakce">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="globalniidnavrhuzmeny">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="isknbudovaid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="dokonceni">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="druhkonstrukcekod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="obestavenyprostor">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="pocetbytu">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="pocetpodlazi">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="podlahovaplocha">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="pripojenikanalizacekod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="pripojeniplynkod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="pripojenivodovodkod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="vybavenivytahemkod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="zastavenaplocha">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="zpusobvytapenikod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="zpusobochranykod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="zpusobochranytypochranykod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="zpusobochranyidtransakce">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="zpusobochranyrizeniid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="detailniteakod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
@@ -2470,215 +2553,6 @@
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="gml_id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="kod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="nespravny">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="cislodomovni">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="identifikacniparcelaid">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="typstavebnihoobjektukod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="zpusobvyuzitikod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="castobcekod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="momckod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="platiod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="platido">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="idtransakce">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="globalniidnavrhuzmeny">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="isknbudovaid">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="dokonceni">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="druhkonstrukcekod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="obestavenyprostor">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="pocetbytu">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="pocetpodlazi">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="podlahovaplocha">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="pripojenikanalizacekod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="pripojeniplynkod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="pripojenivodovodkod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="vybavenivytahemkod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="zastavenaplocha">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="zpusobvytapenikod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="zpusobochranykod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="zpusobochranytypochranykod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="zpusobochranyidtransakce">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="zpusobochranyrizeniid">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="detailniteakod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>tows_ulice20140802233459562</id>
-            <datasource>http://localhost/cgi-bin/vugtkwfs?SERVICE=WFS&amp;VERSION=1.0.0&amp;REQUEST=GetFeature&amp;TYPENAME=tows:ulice&amp;SRSNAME=EPSG:5514</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>ulice - WFS-T</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +towgs84=542.5,89.2,456.9,5.517,2.275,5.516,6.96 +pm=greenwich +units=m +no_defs</proj4>
-                    <srsid>26812</srsid>
-                    <srid>5514</srid>
-                    <authid>EPSG:5514</authid>
-                    <description>S-JTSK (Greenwich) / Krovak East North</description>
-                    <projectionacronym>krovak</projectionacronym>
-                    <ellipsoidacronym>bessel</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <provider encoding="UTF-8">WFS</provider>
-            <previewExpression></previewExpression>
-            <vectorjoins/>
-            <expressionfields/>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
-                <symbols>
-                    <symbol alpha="1" type="line" name="0">
-                        <layer pass="0" class="SimpleLine" locked="0">
-                            <prop k="capstyle" v="square"/>
-                            <prop k="color" v="130,52,94,255"/>
-                            <prop k="customdash" v="5;2"/>
-                            <prop k="customdash_map_unit_scale" v="0,0"/>
-                            <prop k="customdash_unit" v="MM"/>
-                            <prop k="draw_inside_polygon" v="0"/>
-                            <prop k="joinstyle" v="bevel"/>
-                            <prop k="offset" v="0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="penstyle" v="solid"/>
-                            <prop k="use_custom_dash" v="0"/>
-                            <prop k="width" v="0.26"/>
-                            <prop k="width_map_unit_scale" v="0,0"/>
-                            <prop k="width_unit" v="MM"/>
-                        </layer>
-                    </symbol>
-                </symbols>
-                <rotation/>
-                <sizescale scalemethod="area"/>
-            </renderer-v2>
-            <customproperties/>
-            <blendMode>0</blendMode>
-            <featureBlendMode>0</featureBlendMode>
-            <layerTransparency>0</layerTransparency>
-            <displayfield>gml_id</displayfield>
-            <label>0</label>
-            <labelattributes>
-                <label fieldname="" text="Popisek"/>
-                <family fieldname="" name="Ubuntu"/>
-                <size fieldname="" units="pt" value="12"/>
-                <bold fieldname="" on="0"/>
-                <italic fieldname="" on="0"/>
-                <underline fieldname="" on="0"/>
-                <strikeout fieldname="" on="0"/>
-                <color fieldname="" red="0" blue="0" green="0"/>
-                <x fieldname=""/>
-                <y fieldname=""/>
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-                <angle fieldname="" value="0" auto="0"/>
-                <alignment fieldname="" value="center"/>
-                <buffercolor fieldname="" red="255" blue="255" green="255"/>
-                <buffersize fieldname="" units="pt" value="1"/>
-                <bufferenabled fieldname="" on=""/>
-                <multilineenabled fieldname="" on=""/>
-                <selectedonly on=""/>
-            </labelattributes>
-            <editform></editform>
-            <editforminit></editforminit>
-            <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
-            <editorlayout>generatedlayout</editorlayout>
-            <excludeAttributesWMS/>
-            <excludeAttributesWFS/>
-            <attributeactions/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="gml_id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="kod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="nazev">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="nespravny">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="obeckod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="platiod">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="platido">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="idtransakce">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="globalniidnavrhuzmeny">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
         </maplayer>
     </projectlayers>
     <properties>
@@ -2742,8 +2616,8 @@ http://gismentors.eu</WMSServiceAbstract>
         </Gui>
         <Digitizing>
             <LayerSnappingList type="QStringList">
-                <value>okresy20140802212827912</value>
                 <value>obce20140802212827934</value>
+                <value>okresy20140802212827912</value>
                 <value>stavebniobjekty20140802222716165</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
