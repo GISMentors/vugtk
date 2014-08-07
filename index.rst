@@ -1,13 +1,13 @@
-VUGT - Open Source GIS Stack
+VÚGTK - Open Source GIS Stack
 ============================
 
 **Autoři:**
-    GISMentors http://gismentors.eu
+    GISMentors, http://gismentors.eu
 **Rok:**
     2014
 **Účel:**
-    Workshop na VUGTK o Open Source nástrojích pro zpracování geoinformací
-**Obsah**
+    Workshop na VÚGTK zaměřený na Open Source nástroje pro zpracování geoinformací
+**Obsah:**
     .. toctree::
         :maxdepth: 2
 
