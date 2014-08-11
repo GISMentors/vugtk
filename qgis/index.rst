@@ -37,12 +37,20 @@ vrstvu.
 
 QGIS umožňuje přidat více vrstev najednou, tj. více souborů z daného
 adresáře. V dialogu pro přidání vektorové vrstvy zvolíme *typ zdroje:
-adresář* (1) a poté zvolíme *adresář* (2), ze kterého chceme soubory
-načíst.
+adresář* :fignote:`(1)` a poté zvolíme *adresář* :fignote:`(2)`, ze
+kterého chceme soubory načíst.
 
 .. figure:: qgis-load-shapefile-dir.png
 
             Načtení více souborů z daného adresáře
+
+Posléze se objeví dialog, který umožňuje vybrat jaké vektorové vrstvy
+chceme do QGISu načíst, v našem případě vybereme všechny
+:fignote:`(1)` vrtsvy kromě *obce* (kterou jsme přidali již dříve).
+
+.. figure:: qgis-load-shapefile-dir-select.png
+
+            Výběr vektorových vrstev k načtení do QGISu
 
 Uložení vektorových dat do geodatabáze PostGIS
 ----------------------------------------------
