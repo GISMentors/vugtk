@@ -52,6 +52,12 @@ chceme do QGISu načíst, v našem případě vybereme všechny
 
             Výběr vektorových vrstev k načtení do QGISu
 
+Výsledek může vypadat například (symbologie je nastavena náhodně)
+takto:
+
+.. figure:: qgis-all-shapefiles.png
+            :width: 800px
+
 Uložení vektorových dat do geodatabáze PostGIS
 ----------------------------------------------
 
