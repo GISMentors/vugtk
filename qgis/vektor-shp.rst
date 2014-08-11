@@ -48,3 +48,10 @@ takto:
 
 .. figure:: qgis-all-shapefiles.png
             :width: 800px
+
+Souřadnicový systém načtených vektorových dat je S-JTSK (:epsg:`5514`), viz obr. níže.
+
+.. figure:: qgis-statusbar-srs.png
+            :width: 800px
+            
+            Souřadnicový systém mapového okna
