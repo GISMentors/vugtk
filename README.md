@@ -1,7 +1,15 @@
 Workshop na VÚGTK
 =================
 
-Scénář:
+Postup pro kompilaci workshopu
+------------------------------
+
+        git clone git@github.com:GISMentors/sphinx-template.git
+        git clone git@github.com:GISMentors/vugtk.git
+        cd vugtk
+        make html
+
+Scénář
 -------
 
 - uživatel spustí QGIS
