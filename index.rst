@@ -2,7 +2,7 @@ VÚGTK - Open Source GIS Stack
 =============================
 
 **Autoři:**
-    GISMentors, http://gismentors.eu
+    Za GISMentors Jáchym Čepický a Martin Landa, http://gismentors.eu
 **Rok:**
     2014
 **Účel:**
