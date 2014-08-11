@@ -1,34 +1,36 @@
-Workshop na VUGTK
+Workshop na VÚGTK
 =================
 
 Scénář:
 -------
 
-- uzivatel spusti qgis
-- uzivatel nahraje a zobrazi esri shapefile, muze ho editovat
-- uzivatel nahraje data do centralni postgis databaze
-- uzivatel si zobrazi data z centralni databaze, muze je editovat
-- uzivatel vypublikuje projekt do centralne nainstalovaneho geoserveru
-- uzivatel si natahne wms z geoserveru
-- uzivatel si natahne wfs-t z geoserveru
-- Uzivatel vezme sablonu projektu v openlayers, zobrazi, pritesa, zobrazi
-- Uzivatel si vezme sablonu projektu v leaflet, zobrazi, pritesa, zobrazi
+- uživatel spustí QGIS
+- uživatel nahraje a zobrazí v QGISu vektorová data ve formátu ESRI Shapefile, nastaví jejich symbologii, data může lokálně editovat
+- uživatel nahraje v prostředí QGIS vektorová data z předešlého bodu do centralní geodatabáze PostGIS
+- uživatel si zobrazí vektorová data z centralní geodatabáze, nastaví jejich symbologii, data může editovat
+- uživatel vypublikuje projekt do centralně nainstalovaného mapového serveru
+- uživatel si přidá do QGISu WMS vrstvu z mapového serveru
+- uživatel si přidá do QGISu WFS vrstvu z mapového serveru
+- uživatel vytvoří j́ednoduchou webovou aplikaci pomocí knihovny OpenLayers
+- uživatel vytvoří j́ednoduchou webovou aplikaci pomocí knihovny Leaflet
 
 Zdrojová data
 -------------
-nejaky SHP, asi z OpenStreetMap, Ortofoto z CUZK, dlazdice z OSM
 
-S-JTSK
-------
-v tuhle chvili ignorovat
+- data RÚIAN ve formátu Esri Shapefile and PostGIS
+- ortofoto ČR ve formátu JPEG
 
-Delka
+Data jsou v souřadnicovém systému S-JTSK (EPSG:5514).
+
+Délka
 -----
-jedno odpoledne
+
+- jedno odpoledne
 
 Software
 --------
-* qgis na desktopu,
-* open-geo suite plugin v qgis,
-* postgis na centralnim serveru
-* geoserver na centralnim serveru
+
+- QGIS 2.4 na desktopu
+- QGIS OpenGeo Suite plugin
+- PostGIS 2.1 na centralním serveru
+- MapServer 6.4 na centralním serveru

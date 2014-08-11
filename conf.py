@@ -6,7 +6,7 @@ import os
 # -- General configuration ------------------------------------------------
 
 # General information about the project.
-project = u'VUGTK Workshop'
+project = u'VÚGTK Workshop'
 copyright = u'2014, GISMentors.eu'
 
 # The version info for the project you're documenting, acts as replacement for
