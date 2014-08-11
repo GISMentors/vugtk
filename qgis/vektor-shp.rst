@@ -1,8 +1,14 @@
 Načtení vektorových dat ve formátu Esri Shapefile
 -------------------------------------------------
 
-Vektorová data (v našem případě data ve formátu :wikipedia:`Esri
-Shapefile`) je možné načíst z *menu*
+.. note:: Vektorová data ve formátu :wikipedia:`Esri Shapefile` jsou
+          umístěna v adresáři ``data/shp`` `zip archivu
+          <https://github.com/GISMentors/vugtk/archive/master.zip>`_
+          workshopu.
+
+
+Vektorová data (v našem případě data ve formátu Esri Shapefile) je
+možné načíst z *menu*
 
 .. figure:: qgis-add-vector-menu.png
            :width: 300px
