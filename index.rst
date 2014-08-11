@@ -1,5 +1,5 @@
 VÚGTK - Open Source GIS Stack
-============================
+=============================
 
 **Autoři:**
     GISMentors, http://gismentors.eu
