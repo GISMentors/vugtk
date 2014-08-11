@@ -11,11 +11,13 @@ platformách :wikipedia:`MS Windows`, :wikipedia:`Mac OSX` a :wikipedia:`GNU/Lin
 .. note:: Návod je koncipován pro verzi **QGIS 2.4**
 .. image:: qgis-version.png
 
-.. rubric:: :secnotoc:`Obsah`
+.. rubric:: :secnotoc:`Témata`
 
 .. toctree::
    :maxdepth: 1
 
-   lokalni-soubory.rst
+   vektor-shp.rst
+   raster-jpg.rst
+   symbologie.rst
    geodatabaze.rst
    editace.rst
