@@ -1,0 +1,2 @@
+Editace vektorových dat
+-----------------------
