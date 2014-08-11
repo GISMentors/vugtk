@@ -18,11 +18,10 @@ Učastník workshopu
 - vytvoří j́ednoduchou webovou aplikaci pomocí knihovny :doc:`web/leaflet`
 - vytvoří j́ednoduchou webovou aplikaci pomocí knihovny :doc:`web/openlayers`
 
-
 Délka workshopu
-===============
+^^^^^^^^^^^^^^^
 
-* jedno odpoledne 
+- jedno odpoledne
 
 Softwarové požadavky
 ====================
