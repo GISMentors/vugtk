@@ -5,14 +5,14 @@ Scénář:
 -------
 
 - uživatel spustí QGIS
-- uživatel nahraje a zobrazí v QGISu vektorová data ve formátu ESRI Shapefile, nastaví jejich symbologii, data může lokálně editovat
-- uživatel nahraje v prostředí QGIS vektorová data z předešlého bodu do centralní geodatabáze PostGIS
-- uživatel si zobrazí vektorová data z centralní geodatabáze, nastaví jejich symbologii, data může editovat
-- uživatel vypublikuje projekt do centralně nainstalovaného mapového serveru
-- uživatel si přidá do QGISu WMS vrstvu z mapového serveru
-- uživatel si přidá do QGISu WFS vrstvu z mapového serveru
-- uživatel vytvoří j́ednoduchou webovou aplikaci pomocí knihovny OpenLayers
-- uživatel vytvoří j́ednoduchou webovou aplikaci pomocí knihovny Leaflet
+- nahraje a zobrazí v QGISu vektorová data ve formátu ESRI Shapefile, nastaví jejich symbologii, data může lokálně editovat
+- nahraje v prostředí QGIS vektorová data z předešlého bodu do centralní geodatabáze PostGIS
+- zobrazí vektorová data z centralní geodatabáze, nastaví jejich symbologii, data může editovat
+- vypublikuje projekt do centralně nainstalovaného mapového serveru
+- přidá do QGISu WMS vrstvu z mapového serveru
+- přidá do QGISu WFS vrstvu z mapového serveru
+- vytvoří j́ednoduchou webovou aplikaci pomocí knihovny OpenLayers
+- vytvoří j́ednoduchou webovou aplikaci pomocí knihovny Leaflet
 
 Zdrojová data
 -------------
