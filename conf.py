@@ -60,4 +60,5 @@ texinfo_documents = [
 sys.path.append(os.path.join('..', 'sphinx-template'))
 from conf_base import *
 
+# show todos...
 todo_include_todos = True
