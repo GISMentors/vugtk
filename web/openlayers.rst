@@ -1,7 +1,7 @@
 OpenLayers
 ==========
 
-`Leaflet <http://openlayers.org>`_ je knihovna v jazyce JavaScript, pomocí které
+`OpenLayers <http://openlayers.org>`_ je knihovna v jazyce JavaScript, pomocí které
 lze vytvářet webové mapové aplikace. Jedná se o velice komplexní knihovnu,
 schopnou zobrazovat velké množství formátů dat a služeb, ať už proprietárních,
 tak standardních.
