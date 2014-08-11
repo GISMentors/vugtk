@@ -14,6 +14,6 @@ VÚGTK - Open Source GIS Stack
         uvod
         qgis/index
         postgis/index
-        geoserver/index
+        mapserver/index
         web/index
         zaver
