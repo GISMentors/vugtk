@@ -4,6 +4,8 @@
 	<title>OpenLayers WFS-T Example</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        </style>
         <script src="http://geoportal.gov.cz/wwwlibs/proj4js/proj4js.js" type="text/javascript"></script>
         <script src="http://geoportal.gov.cz/wwwlibs/proj4js/projCode/krovak.js" type="text/javascript"></script>
         <script type="text/javascript">
@@ -35,6 +37,36 @@
         function showFailureMsg(){
             showMsg("Při zpracování transakce se vyskytla chyba.");
         };
+
+        /**
+         * funkce pro mazání prvků
+         */
+        var DeleteFeature = OpenLayers.Class(OpenLayers.Control, {
+          initialize: function(layer, options) {
+              OpenLayers.Control.prototype.initialize.apply(this, [options]);
+              this.layer = layer;
+              this.handler = new OpenLayers.Handler.Feature(
+                  this, layer, {click: this.clickFeature}
+              );
+          },
+          clickFeature: function(feature) {
+              // if feature doesn't have a fid, destroy it
+              if(feature.fid == undefined) {
+                  this.layer.destroyFeatures([feature]);
+              } else {
+                  feature.state = OpenLayers.State.DELETE;
+                  this.layer.events.triggerEvent("afterfeaturemodified",
+                                                 {feature: feature});
+                  feature.renderIntent = "select";
+                  this.layer.drawFeature(feature);
+              }
+          },
+          setMap: function(map) {
+              this.handler.setMap(map);
+              OpenLayers.Control.prototype.setMap.apply(this, arguments);
+          },
+          CLASS_NAME: "OpenLayers.Control.DeleteFeature"
+        });
 
         var map, wfs;
         /**
@@ -98,36 +130,40 @@
 
                 map.addControl(new OpenLayers.Control.LayerSwitcher());
 
-                // přidání panelu s tlačítky pro editaci
-                var editPanel = new OpenLayers.Control.EditingToolbar(wfs);
-                map.addControl(editPanel);
-
-                // přidání tlačítka na modifikaci existujících elementů v mapě
-                var modify = new OpenLayers.Control.ModifyFeature(wfs, {
+                var panel = new OpenLayers.Control.Panel(
+                  {'displayClass': 'olControlEditingToolbar'}
+                );
+                var navigate = new OpenLayers.Control.Navigation({
+                    title: "Pan Map"
+                });
+                var draw = new OpenLayers.Control.DrawFeature(
+                    wfs, OpenLayers.Handler.Polygon,
+                    {
+                        title: "Draw Feature",
+                        displayClass: "olControlDrawFeaturePolygon",
+                        multi: true
+                    }
+                );
+                var edit = new OpenLayers.Control.ModifyFeature(wfs, {
                     title: "Modify Feature",
                     displayClass: "olControlModifyFeature"
                 });
-                editPanel.addControls([modify]);
-
-                /**
-                 * funkce která uloží data na server
-                 */
-                var savewfs = function() {
-                    //if(modify.feature) {
-                    //    modify.selectControl.unselectAll();
-                    //}
-                    saveStrategy.save();
-                };
-
-                // vytvoření tlačítka pro uložení WFS-T
+                var del = new DeleteFeature(wfs, {title: "Delete Feature"});
                 var save = new OpenLayers.Control.Button({
-                    title: "Uložit změny",
-                    trigger: savewfs, // tato funkce je definována výše
+                    title: "Save Changes",
+                    trigger: function() {
+                        if(edit.feature) {
+                            edit.selectControl.unselectAll();
+                        }
+                        saveStrategy.save();
+                    },
                     displayClass: "olControlSaveFeatures"
                 });
-
-                editPanel.addControls([save]);
+                panel.addControls([navigate, save, del, edit, draw]);
+                panel.defaultControl = navigate;
+                map.addControl(panel);
         };
+
 
 	</script>
 </head>
