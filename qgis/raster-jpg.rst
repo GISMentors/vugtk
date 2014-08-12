@@ -1,5 +1,5 @@
 Načtení rastrových dat ve formátu JPEG a nastavení souřadnicového systému
-------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 .. note:: Rastrová data ve formátu :wikipedia-en:`JPEG` jsou
           umístěna v adresáři ``data/jpeg`` `zip archivu
