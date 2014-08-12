@@ -1,7 +1,7 @@
 Načtení vektorových dat ve formátu Esri Shapefile
 -------------------------------------------------
 
-.. note:: Vektorová data ve formátu :wikipedia:`Esri Shapefile` jsou
+.. note:: Vektorová data ve formátu :wikipedia-en:`Esri Shapefile` jsou
           umístěna v adresáři ``data/shp`` `zip archivu
           <https://github.com/GISMentors/vugtk/archive/master.zip>`_
           workshopu.
@@ -43,7 +43,7 @@ chceme do QGISu načíst, v našem případě vybereme všechny
 
             Výběr vektorových vrstev k načtení do QGISu
 
-Výsledek může vypadat například (symbologie je nastavena náhodně)
+Výsledek může vypadat například (:doc:`symbologii vrstev <symbologie>` nastavíme později)
 takto:
 
 .. figure:: qgis-all-shapefiles.png
