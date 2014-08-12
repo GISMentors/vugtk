@@ -2,7 +2,7 @@ Načtení rastrových dat ve formátu JPEG a nastavení souřadnicového systém
 ------------------------------------------------------------------------
 
 .. note:: Rastrová data ve formátu :wikipedia-en:`JPEG` jsou
-          umístěna v adresáři ``data/raster`` `zip archivu
+          umístěna v adresáři ``data/jpeg`` `zip archivu
           <https://github.com/GISMentors/vugtk/archive/master.zip>`_
           workshopu.
 
