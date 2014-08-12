@@ -19,5 +19,4 @@ platformách :wikipedia:`MS Windows`, :wikipedia:`Mac OSX` a :wikipedia:`GNU/Lin
    vektor-shp.rst
    raster-jpg.rst
    symbologie.rst
-   geodatabaze.rst
    editace.rst

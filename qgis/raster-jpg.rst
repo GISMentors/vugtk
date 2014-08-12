@@ -1,4 +1,4 @@
-Načtení rastrových dat ve formátu JPG a nastavení souřadnicového systému
+Načtení rastrových dat ve formátu JPEG a nastavení souřadnicového systému
 ------------------------------------------------------------------------
 
 .. note:: Rastrová data ve formátu :wikipedia-en:`JPEG` jsou
