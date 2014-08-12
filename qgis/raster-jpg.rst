@@ -43,3 +43,27 @@ V tomto dialogu vybereme souřadnicový systém UTM 33N.
 .. figure:: qgis-raster-properties-srs-dialog.png
             :width: 600px
 
+QGIS narozdíl např. :wikipedia:`Esri ArcGIS` neprovádí transformaci
+datových vrstev připojených v odlišných souřadnicových systémech
+automatiky. Tuto možnost je nutno povolit a zároveň zvolit cílový
+souřadnicový systém mapového okna. Poté již QGIS zobrazí datové vrstvy
+"přes sebe", tj. transformavené do zvoleného souřadnicového
+systému. Volbu automatické transformace povolíme v *vlastnostech
+projektu* dostupné z menu aplikace.
+
+.. figure:: qgis-project-properties.png
+            :width: 250px
+
+V dialogu nejprve povolíme "on-the-fly transformaci" :fignote:`(1)`,
+poté zvolíme cílový souřadnicový systém mapového okna :fignote:`(2)` -
+v našem případě S-JTSK (:epsg:`5514`) a nastavení potvrdíme
+:fignote:`(3)`.
+
+.. figure:: qgis-project-on-fly-trans.png
+            :width: 600px
+
+Nyní by se měla rastrová vrstva ortofota již zobrazit natransformována
+do souřadnicového systému S-JTSK.
+
+.. figure:: qgis-all-layers.png
+            :width: 800px
