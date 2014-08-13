@@ -76,8 +76,7 @@ Editace pomocí protokolu WFS-T
 .. note:: Nastavení editace vektorových dat pomocí protokolu WFS-T vyžaduje již
     určité programátorské schopnosti. Tento příklad berte pouze jako
     ilustrativní, pro reálný systém je potřeba ošetřit celou řadu krajních
-    případů.
-
+    případů. Příklad vychází z oficiální dokumentace k TinyOWS [#f4]_
 .. raw:: html
 
     <iframe src="../_static/web/openlayers-wfst.html" width="620" height="420"></iframe>
@@ -91,31 +90,24 @@ Nejprve přidáme do seznamu strategií u vrstvy WFS strategii pro ukládání:
 
 .. literalinclude:: ../_static/web/openlayers-wfst.html
    :language: javascript
-   :lines: 66-86
-   :emphasize-lines: 74
+   :lines: 131,136-148
+   :emphasize-lines: 131,137
 
 Přidáme nástroje pro kreslení nových prvků a změnu existujících prvků v mapě:
 
 .. literalinclude:: ../_static/web/openlayers-wfst.html
    :language: javascript
-   :lines: 90-99
+   :lines: 154-157,163-171,178-180,193-195
 
-Nyní vytvoříme funkci, která má být zavolána a která pošle změněná vektorová data na
-server pomocí protokolu WFS-T. Funkce zruší výběr všech prvků a podešle obsah
-mapy na server.
+Nakonec vyrobíme tlačítko s ukládací funkcí
 
 .. literalinclude:: ../_static/web/openlayers-wfst.html
    :language: javascript
-   :lines: 101-110
-
-Nakonec vyrobíme tlačítko, které tuto ukládací funkci zavolá:
-
-.. literalinclude:: ../_static/web/openlayers-wfst.html
-   :language: javascript
-   :lines: 112-119
+   :lines: 182-192
 
 .. rubric:: Poznámky
 
 .. [#f1] Příklady OpenLayers http://openlayers.org/dev/examples/
 .. [#f2] Dokumentace OpenLayers http://docs.openlayers.org/
 .. [#f3] API dokumentace http://dev.openlayers.org/releases/OpenLayers-2.13.1/doc/apidocs/files/OpenLayers-js.html
+.. [#f4] Příklad pro TinyOWS a OpenLayers http://mapserver.org/tinyows/openlayershowto.html

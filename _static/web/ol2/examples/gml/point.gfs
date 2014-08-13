@@ -1,0 +1,31 @@
+<GMLFeatureClassList>
+  <GMLFeatureClass>
+    <Name>point</Name>
+    <ElementPath>point</ElementPath>
+    <GeometryType>1</GeometryType>
+    <SRSName>EPSG:4326</SRSName>
+    <DatasetSpecificInfo>
+      <FeatureCount>2</FeatureCount>
+      <ExtentXMin>-0.60832</ExtentXMin>
+      <ExtentXMax>-0.02142</ExtentXMax>
+      <ExtentYMin>44.85752</ExtentYMin>
+      <ExtentYMax>45.47758</ExtentYMax>
+    </DatasetSpecificInfo>
+    <PropertyDefn>
+      <Name>ogc_fid</Name>
+      <ElementPath>ogc_fid</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>name</Name>
+      <ElementPath>name</ElementPath>
+      <Type>String</Type>
+      <Width>10</Width>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>id</Name>
+      <ElementPath>id</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+  </GMLFeatureClass>
+</GMLFeatureClassList>

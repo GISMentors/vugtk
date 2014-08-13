@@ -5,6 +5,26 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
+              div.olControlEditingToolbar div.olControlSaveFeaturesItemInactive {
+                    background-image: url(ol2/theme/default/img/save_features_off.png);
+                    background-repeat: no-repeat;
+                    background-position: 0 1px;
+                }
+              div.olControlEditingToolbar div.olControlSaveFeaturesItemActive {
+                    background-image: url(ol2/theme/default/img/save_features_on.png);
+                    background-repeat: no-repeat;
+                    background-position: 0 1px;
+                }
+              div.olControlEditingToolbar div.olControlDeleteFeatureItemActive {
+                    background-image: url(ol2/theme/default/img/remove_point_on.png);
+                    background-repeat: no-repeat;
+                    background-position: 0px 1px;
+                }
+                div.olControlEditingToolbar div.olControlDeleteFeatureItemInactive {
+                    background-image: url(ol2/theme/default/img/remove_point_off.png);
+                    background-repeat: no-repeat;
+                    background-position: 0px 1px;
+                }
         </style>
         <script src="http://geoportal.gov.cz/wwwlibs/proj4js/proj4js.js" type="text/javascript"></script>
         <script src="http://geoportal.gov.cz/wwwlibs/proj4js/projCode/krovak.js" type="text/javascript"></script>
@@ -12,16 +32,16 @@
             Proj4js.defs["EPSG:5514"] = "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +pm=greenwich +units=m +no_defs +towgs84=570.8,85.7,462.8,4.998,1.587,5.261,3.56";
             Proj4js.defs["EPSG:3857"] = "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs";
         </script>
-        <script type="text/javascript" src="http://dev.doctor/ol2/lib/OpenLayers.js"></script>
+        <script type="text/javascript" src="ol2/lib/OpenLayers.js"></script>
 	<script type="text/javascript">
 
         /**
          * funkce pro zobrazení zprávy
          */
         function showMsg(szMessage) {
-        document.getElementById("message").innerHTML = szMessage;
-        setTimeout(
-            "document.getElementById('message').innerHTML = ''",2000);
+            document.getElementById("message").innerHTML = szMessage;
+            setTimeout(
+                "document.getElementById('message').innerHTML = ''",2000);
         }
 
         /**
@@ -128,27 +148,38 @@
                 });
                 map.addLayer(wfs);
 
+                // přepínač vrstev
                 map.addControl(new OpenLayers.Control.LayerSwitcher());
 
+                // vytvoříme panel nástrojů
                 var panel = new OpenLayers.Control.Panel(
                   {'displayClass': 'olControlEditingToolbar'}
                 );
+
+                // nástroj navigace
                 var navigate = new OpenLayers.Control.Navigation({
                     title: "Pan Map"
                 });
+
+                // kreslení polygonů
                 var draw = new OpenLayers.Control.DrawFeature(
                     wfs, OpenLayers.Handler.Polygon,
                     {
                         title: "Draw Feature",
                         displayClass: "olControlDrawFeaturePolygon",
                         multi: true
-                    }
-                );
+                    });
+
+                // editace geometrie
                 var edit = new OpenLayers.Control.ModifyFeature(wfs, {
                     title: "Modify Feature",
                     displayClass: "olControlModifyFeature"
                 });
+
+                // mazání
                 var del = new DeleteFeature(wfs, {title: "Delete Feature"});
+
+                // uložení
                 var save = new OpenLayers.Control.Button({
                     title: "Save Changes",
                     trigger: function() {
@@ -159,6 +190,8 @@
                     },
                     displayClass: "olControlSaveFeatures"
                 });
+
+                // přidání nástrojů do panelu a panelu do mapy
                 panel.addControls([navigate, save, del, edit, draw]);
                 panel.defaultControl = navigate;
                 map.addControl(panel);
