@@ -15,5 +15,6 @@ VÚGTK - Open Source GIS Stack
         qgis/index
         postgis/index
         mapserver/index
+        tinyows/index
         web/index
         zaver
