@@ -1,2 +1,4 @@
 Nastavení symbologie
 --------------------
+
+.. todo:: 
