@@ -1,6 +1,10 @@
 QGIS
 ----
 
+.. image:: qgis-logo.png
+   :align: right
+   :width: 100px
+
 `QGIS <http://qgis.org>`_ (dříve označovaný také jako *Quantum GIS*)
 je desktopový open source nástroj určený pro zobrazování, manipulaci a
 analýzu geografických dat (viz :wikipedia:`wikipedia <QGIS>`). QGIS patří ve své
