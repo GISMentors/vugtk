@@ -19,9 +19,21 @@ viz http://freegis.fsv.cvut.cz/gwiki/RUIAN_/_OGR-VFR#Konverze_do_Esri_Shapefile
 
 **Postup nahrání předpřipravené dávky:**
 
+Příkazová řádka:
+
          export DB=gismentors_vugtk; dropdb $DB ; createdb $DB && \
          psql $DB -c "create extension postgis; create extension postgis_topology"
-         postgis_restore.pl postgis/gismentors_vugtk.dump | psql $DB
+         postgis_restore.pl postgis/gismentors_vugtk.backup | psql $DB
+
+PgAdmin3:
+
+* vytvořit novou DB
+* z kontextového menu nad vytvořenou DB zvolit *Obnovit*
+* vybrat dávku ``gismentors_vugtk.backup`` a nahrát
+
+**Nastavení přístupových práv:**
+
+TODO
 
 **Postup pro vytvoření DB ze zdrojových dat:**
 
@@ -40,7 +52,7 @@ viz http://freegis.fsv.cvut.cz/gwiki/RUIAN_/_OGR-VFR#Konverze_do_Esri_Shapefile
 
 4) Vytvoření dávky
 
-         pg_dump -Fc -b -v -Z 9 -O -x -f postgis/gismentors_vugtk.dump gismentors_vugtk
+         pg_dump -Fc -b -v -Z 9 -O -x -f postgis/gismentors_vugtk.backup gismentors_vugtk
 
 
 viz http://freegis.fsv.cvut.cz/gwiki/RUIAN_/_OGR-VFR#Konverze_do_PostGIS
