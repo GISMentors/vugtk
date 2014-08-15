@@ -1,8 +1,8 @@
-Workshop na VÚGTK
-=================
+Workshop možnosti webových mapových technologií pro Nové mapování katastrálního operátu - I.část
+================================================================================================
 
-Postup pro kompilaci workshopu
-------------------------------
+Postup pro kompilaci dokumentace
+--------------------------------
 
         git clone git@github.com:GISMentors/sphinx-template.git
         git clone git@github.com:GISMentors/vugtk.git
@@ -19,26 +19,29 @@ Scénář
 - vypublikuje projekt do centralně nainstalovaného mapového serveru
 - přidá do QGISu WMS vrstvu z mapového serveru
 - přidá do QGISu WFS vrstvu z mapového serveru
-- vytvoří j́ednoduchou webovou aplikaci pomocí knihovny OpenLayers
-- vytvoří j́ednoduchou webovou aplikaci pomocí knihovny Leaflet
+- vytvoří jednoduchou webovou aplikaci pomocí knihovny OpenLayers
+- vytvoří jednoduchou webovou aplikaci pomocí knihovny Leaflet
 
 Zdrojová data
 -------------
 
-- data RÚIAN ve formátu Esri Shapefile and PostGIS
+- data RÚIAN ve formátu Esri Shapefile a PostGIS
 - ortofoto ČR ve formátu JPEG
 
-Data jsou v souřadnicovém systému S-JTSK (EPSG:5514).
+Všechna použitá data jsou v souřadnicovém systému S-JTSK (EPSG:5514).
 
 Délka
 -----
 
-- jedno odpoledne
+- 4 hodiny
 
 Software
 --------
 
-- QGIS 2.4 na desktopu
-- QGIS OpenGeo Suite plugin
-- PostGIS 2.1 na centralním serveru
-- MapServer 6.4 na centralním serveru
+- Pracovní stanice účastníků
+        QGIS 2.4
+        QGIS OpenGeo Suite plugin
+        MapServer 6.4
+- Centrální server VÚGTK
+        PostGIS 2.1
+        MapServer 6.4
