@@ -33,7 +33,8 @@ PgAdmin3:
 
 **Nastavení přístupových práv:**
 
-TODO
+         CREATE USER gismentors WITH PASSWORD 'vugtk14';
+         GRANT CREATE ON DATABASE gismentors_vugtk TO gismentors;
 
 **Postup pro vytvoření DB ze zdrojových dat:**
 
