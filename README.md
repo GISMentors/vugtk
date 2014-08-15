@@ -1,7 +1,7 @@
 Workshop možnosti webových mapových technologií pro Nové mapování katastrálního operátu - I.část
 ================================================================================================
 
-Postup pro kompilaci dokumentace
+Kompilace dokumentace
 --------------------------------
 
         git clone git@github.com:GISMentors/sphinx-template.git
@@ -38,10 +38,5 @@ Délka
 Software
 --------
 
-- Pracovní stanice účastníků
-        QGIS 2.4
-        QGIS OpenGeo Suite plugin
-        MapServer 6.4
-- Centrální server VÚGTK
-        PostGIS 2.1
-        MapServer 6.4
+- Pracovní stanice účastníků: QGIS 2.4, QGIS OpenGeo Suite plugin, MapServer 6.4
+- Centrální server VÚGTK: PostGIS 2.1, MapServer 6.4
