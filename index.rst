@@ -1,5 +1,5 @@
-VÚGTK - Open Source GIS Stack
-=============================
+Workshop možnosti webových mapových technologií pro Nové mapování katastrálního operátu - I.část
+------------------------------------------------------------------------------------------------
 
 **Autoři:**
     Za GISMentors Jáchym Čepický a Martin Landa, http://gismentors.eu

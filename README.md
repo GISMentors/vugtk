@@ -38,5 +38,5 @@ Délka
 Software
 --------
 
-- Pracovní stanice účastníků: QGIS 2.4, MapServer 6.4
+- Pracovní stanice účastníků: QGIS 2.4, DB Manager Plugin, MapServer 6.4
 - Centrální server VÚGTK: PostGIS 2.1, MapServer 6.4

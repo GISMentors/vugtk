@@ -23,7 +23,7 @@ Učastník workshopu
 Délka workshopu
 ^^^^^^^^^^^^^^^
 
-* jedno odpoledne
+* 4 hodiny
 
 Softwarové požadavky
 ====================
@@ -31,6 +31,10 @@ Softwarové požadavky
 Workshop je koncipován pro následující softwarové balíčky a jejich verze:
 
 * QGIS 2.4, http://qgis.org
+
+  * DB Manager Plugin
+
+
 * PostGIS 2.1, http://postgis.net
 * MapServer 6.4, http://mapserver.org
 * OpenLayers, 2.13, http://openlayers.org
