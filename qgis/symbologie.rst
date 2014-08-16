@@ -6,7 +6,7 @@ Nastavit symbologii pro danou mapovou vrstvu lze z dialogu
 vrstvou.
 
 .. figure:: qgis-vector-properties.png
-            :width: 300px
+            :width: 275px
 
 QGIS umožňuje nastavit různé typy stylů od *jednoduchých* přes
 *kategorizované* až po *odstupňované*. Podrobný popis nejrůznějších
