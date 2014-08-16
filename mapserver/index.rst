@@ -25,4 +25,5 @@ oblíbený českými firmami poskytujícími webové GIS řešení.
    :maxdepth: 1
 
    konfigurace.rst
+   tinyows.rst
    qgis-ws.rst

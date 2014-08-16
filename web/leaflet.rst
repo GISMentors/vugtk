@@ -1,5 +1,9 @@
 Leaflet
 =======
+.. image:: ../_static/leaflet-logo.png
+    :width: 300px
+    :align: right
+    :alt: Leaflet logo
 
 `Leaflet <http://leafletjs.com/>`_ je knihovna v jazyce JavaScript, pomocí které
 lze vytvářet webové mapové aplikace. Na rozdíl od OpenLayers je to spíše

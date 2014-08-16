@@ -15,6 +15,5 @@ Workshop možnosti webových mapových technologií pro Nové mapování katastr
         qgis/index
         postgis/index
         mapserver/index
-        tinyows/index
         web/index
         zaver

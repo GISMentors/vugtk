@@ -33,7 +33,7 @@ LAYER
   END
   TYPE RASTER
   STATUS ON
-  DATA "ortofoto.jpg"
+  DATA "jpeg/ortofoto.jpg"
   PROJECTION
     "init=epsg:32633"
   END
