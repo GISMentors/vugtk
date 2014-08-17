@@ -11,7 +11,7 @@ Připojení vzdálené WMS
 V *menu* :menuselection:`Vrstva --> Přidat vrstvu WMS/WMTS` spustíme nástroj pro
 přidávání služeb OGC WMS a WMTS.
 
-.. figure:: ../qgis/qgis-wms-wmst-menu.png
+.. figure:: ../qgis/qgis-wms-wmts-menu.png
 
 Jako první krok musíme přidat adresu WMS serveru, ze kterého chceme načíst
 vrstvy. Zadejme server `ČUZK ZABAGED <http://geoportal.cuzk.cz/(S(h5zf1imhatnjn05loejijgrx))/Default.aspx?mode=TextMeta&side=wms.verejne&metadataID=CZ-CUZK-WMS-ZABAGED-P&metadataXSL=metadata.sluzba&head_tab=sekce-03-gp&menu=3113>`_ http://geoportal.cuzk.cz/WMS_ZABAGED_PUB/WMService.aspx
