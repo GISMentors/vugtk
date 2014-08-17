@@ -34,6 +34,9 @@ PgAdmin3:
 
 3. z kontextového menu nad vytvořenou DB zvolit *Obnovit*
 4. vybrat dávku ``gismentors_vugtk.backup`` a nahrát
+5. nastavit právo pro vytvoření vlastního schématu
+
+         grant CREATE on DATABASE gismentors_vugtk to gismentors;
 
 **Postup pro vytvoření DB ze zdrojových dat:**
 
