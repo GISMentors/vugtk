@@ -10,7 +10,7 @@ odsazení jednotlivých sekcí. Pro větší čitelnost se ale doporučuje použ
 ``VELKÁ PÍSMENA`` v jednolivých sekcích a používat odsazení.
 
 Metadata mapového projektu
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 Celý příklad *mapfile* si můžete `prohlídnout v souboru <../data/vugtk.map>`_. 
 
 Mapfile začíná slovem ``MAP`` a je ukončem zmiňovaným ``END``, v ůvodní sekci
@@ -31,7 +31,7 @@ Neméně důležitá jsou metadata pro služby OWS a konfigurační cesty ke vzn
    :lines: 12-23
 
 Rastrová vrstva
----------------
+^^^^^^^^^^^^^^^
 Následuje konfigurace vrstev. Jako příklad uvedeme nejprve rastrovou vrstvu z
 připraveného lokálně uloženého rastrového souboru.
 
@@ -42,7 +42,7 @@ Všiměte si, že rastrový snímek je v jiném souřadném systému, než celý
 (UTM vs. S-JTSK).
 
 OWS Proxy
----------
+^^^^^^^^^
 MapServer může sloužit také jako proxy pro další služby OGC OWS a kombinovat tak
 data z různých zdrojů do jednoho obrázku. To lze také využít, chceme-li
 rasterizovat externí datový zdroj např. WFS nebo potřebujeme-li přidat podporu
@@ -54,7 +54,7 @@ V příkladu níže zobrazíme vrstvnice z WMS serveru ČUZK
    :lines: 42-56
 
 Vektorová vrstva
-----------------
+^^^^^^^^^^^^^^^^
 MapServer podporuje všechny myslitelné vektorové formáty (díky knihovně
 GDAL/OGR). V našem příkladu se připojíme na dříve vytvořenou databázi PostGIS a
 zobrazíme v ní vrstvu ``stavebniobjekty`` pod názvem ``budovy``. Všimněte si
@@ -67,7 +67,7 @@ služeb (WMS, WFS).
 .. _konfigurace-sluzby:
 
 Nastavení webové služby
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 Program ``mapserver(.exe)`` rozpoznává parametr ``map`` v URL, který odkazuje na
 daný mapový soubor, např::
 
@@ -88,7 +88,7 @@ nebo zkopírovat `mapserv.exe` pod novým jménem a toto jméno použít::
     SetEnvIf Request_URI "/cgi-bin/vugtkwms" MS_MAPFILE=/path/to/mymap.map
 
 Testování konfigurace mapserveru
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 První možností je testova konfiguraci pomocí programu ``shp2img``, který vezme
 výchozí nastavení v námi vytvořeném konfiguračním mapfile a vyrobí z něj
 obrázek
@@ -106,7 +106,7 @@ obrázek
 
 
 Testování WMS
--------------
+^^^^^^^^^^^^^
 Do webového prohlížeče můžeme nyní zadat adresu WMS s dotazem
 ``GetCapabilities`` pro metadata služby WMS. 
 
