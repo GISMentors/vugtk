@@ -27,13 +27,13 @@ Příkazová řádka:
 
 PgAdmin3:
 
-* vytvořit novou DB
-* vytvořit nového uživatele 'gismentors' pokud neexistuje
+1. vytvořit novou DB
+2. vytvořit nového uživatele 'gismentors' pokud neexistuje
 
          CREATE USER gismentors WITH PASSWORD 'xxx';
 
-* z kontextového menu nad vytvořenou DB zvolit *Obnovit*
-* vybrat dávku ``gismentors_vugtk.backup`` a nahrát
+3. z kontextového menu nad vytvořenou DB zvolit *Obnovit*
+4. vybrat dávku ``gismentors_vugtk.backup`` a nahrát
 
 **Postup pro vytvoření DB ze zdrojových dat:**
 
