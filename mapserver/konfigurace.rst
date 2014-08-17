@@ -11,7 +11,7 @@ odsazení jednotlivých sekcí. Pro větší čitelnost se ale doporučuje použ
 
 Metadata mapového projektu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Celý příklad *mapfile* si můžete `prohlídnout v souboru <../data/vugtk.map>`_. 
+Celý příklad *mapfile* si můžete :download:`prohlídnout v souboru <../data/vugtk.map>`. 
 
 Mapfile začíná slovem ``MAP`` a je ukončem zmiňovaným ``END``, v ůvodní sekci
 jsou základní údaje o projektu:

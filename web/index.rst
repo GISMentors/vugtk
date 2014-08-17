@@ -9,8 +9,11 @@ V této části si představíme dvě nejčastěji používané open source webo
 frameworky - Leaflet a OpenLayers. Na příkladu OpenLayers si také ukážeme
 možnost editace prvků a zapsání změn na serveru pomocí protokolu OGC WFS-T.
 
+.. rubric:: :secnotoc:`Témata`
+
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     leaflet
     openlayers
+    openlayers-wfst

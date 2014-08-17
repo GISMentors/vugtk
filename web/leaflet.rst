@@ -18,6 +18,9 @@ nediskvalifikuje pro specifické případy použití.
 
     <iframe src="../_static/web/leaflet.html" width="620" height="420"></iframe>
 
+Inicializace
+------------
+
 Nejdříve musíme připravit webovou stránku, aby obsahovala element s
 identifikátorem ``map``, do kterého chceme zobrazit mapu. Dále se potřebujeme
 odkázat na knihovnu Leaflet.
@@ -26,7 +29,10 @@ odkázat na knihovnu Leaflet.
     :language: html
     :lines: 7,10,12
 
-V dalším kroku vytvoříme mapový objekt a vložíme do připraveného elementu
+Mapa
+----
+
+V dalším kroce vytvoříme mapový objekt a vložíme do připraveného elementu
 ``map``:
 
 .. literalinclude:: ../_static/web/leaflet.html
@@ -35,6 +41,10 @@ V dalším kroku vytvoříme mapový objekt a vložíme do připraveného elemen
 
 Mapě byl nastaven pohled se středem na souřadnicích 50.14, 14.43 a úroveň přiblížení
 je 13.
+
+
+Vrstvy
+------
 
 Dále přidáme do mapy dlaždicovanou vrstvu ``tileLayer``
 
@@ -63,6 +73,9 @@ A nakonec WMS vrstvu s vektorovými daty budov.
     zobrazování vektorových dat. Ty ale nemohou přicházet ve formátu GML, ale
     nejlépe ve formátu GeoJSON.
 
+Vrstva WFS
+----------
+
 Přidáme vektorovou vrstvu z našeho WFS serveru. Data musí být jeprve načtena ze
 serveru a až poté můžeme vrstvu vytvořit. Nemůžeme se odkázat na WFS server
 přímo s dotazme ``GetFeature``, protože pravděpodobně narazíme na problém s
@@ -76,7 +89,7 @@ už vytvořený skript (``proxy``).
 Další typy vrstev a vstupních dat, stejně jako detaily ke konfiguraci a
 možnostem Leafletu, si můžete prohlídnout v příkladech [#f1]_ nebo dokumentaci [#f2]_.
 
-.. rubric:: Poznámky
+.. rubric:: :secnotoc:`Poznámky`
 
 .. [#f1] Příklady Leaflet http://leafletjs.com/examples.html
 .. [#f2] Dokumentace Leaflet http://leafletjs.com/reference.html

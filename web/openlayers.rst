@@ -24,6 +24,9 @@ příklad vychází stále ještě ze současné aktuální `OpenLayers 2.13
 
     <iframe src="../_static/web/openlayers.html" width="620" height="420"></iframe>
 
+Inicializace
+------------
+
 Nejdříve musíme připravit webovou stránku, aby obsahovala element s
 identifikátorem ``map``, do kterého chceme zobrazit mapu. Dále se potřebujeme
 odkázat na knihovnu OpenLayers.
@@ -32,12 +35,24 @@ odkázat na knihovnu OpenLayers.
     instalovaný na serveru, tzv. "proxy", která požadavky směřující na vzdálený
     server přesměruje ze serveru lokálního. Více viz :wikipedia:`Cross-site_scripting <Cross-site_scripting>`
 
+    OpenLayers (na rozdíl od Leafletu) umožňují kompletní práci se souř. systémy
+    na straně klineta (webového prohlížeče). V praxi to znamená, že vstupní data
+    mohou být např. v souř. systému S-JTSK, ale jsou zobrazeny na pokladové mapě
+    v "web mercator" projekci. To je možné díky knihovně `Proj4js <http://trac.osgeo.org/proj4js/>`_.
+    Tato knihovna se ale v poslední době značně mění a v jeji starší verzi
+    *kompatibilní s OpenLayers 2* není bohužel korektně implementováno Křovákovo
+    zobrazení. Proto se v tomto příkladu odkazujeme na verzi Proj4js na
+    `národním geoportálu INSPIRE <http://geoportal.gov.cz/web/guest/map>`_.
+
 .. literalinclude:: ../_static/web/openlayers.html
     :language: html
-    :lines: 7-9, 63-65
+    :lines: 7, 64-66
 
 Po načtení stránky (``onload`` parametry v elementu ``body``), se spustí funkce
 ``init()``.
+
+Mapa
+----
 
 V dalším kroce vytvoříme funkci ``init()``, ve které vytvoříme mapový objekt a
 vložíme do připraveného elementu ``map``:
@@ -45,6 +60,9 @@ vložíme do připraveného elementu ``map``:
 .. literalinclude:: ../_static/web/openlayers.html
    :language: javascript
    :lines: 13-17
+
+Vrstvy
+------
 
 Dále přidáme do mapy dlaždicovanou vrstvu ze zdroje `OpenStreetMap
 <http://openstreetmap.org>`_. OpenLayers pro nás mají vrstvu speciálně
@@ -68,6 +86,9 @@ Dále přidáme letecký snímek námi vypublikované služby WMS s leteckým sn
    :language: javascript
    :lines: 30-40
 
+Vrstva WFS
+----------
+
 A nakonec vrstvu WFS s vektorovými daty budov z námi předem nakonfigurované
 služby WFS.
 
@@ -75,44 +96,8 @@ služby WFS.
    :language: javascript
    :lines: 42-56
 
-Editace pomocí protokolu WFS-T
-------------------------------
-
-.. note:: Nastavení editace vektorových dat pomocí protokolu WFS-T vyžaduje již
-    určité programátorské schopnosti. Tento příklad berte pouze jako
-    ilustrativní, pro reálný systém je potřeba ošetřit celou řadu krajních
-    případů. Příklad vychází z oficiální dokumentace k TinyOWS [#f4]_
-.. raw:: html
-
-    <iframe src="../_static/web/openlayers-wfst.html" width="620" height="420"></iframe>
-
-Editace pomocí protokolu WFS-T (transakční WFS) vyžaduje jednak nastavení na
-straně serveru a jednak přidání editačních nástrojů do projektu OpenLayers.
-Pokračovat budeme na předchozím příkladě, ale poněkud jej rozšíříme, verzi s
-WFS-T si můžete prohlédnout `dalším příkladě <../_static/web/openlayers-wfst.html>`_.
-
-Nejprve přidáme do seznamu strategií u vrstvy WFS strategii pro ukládání:
-
-.. literalinclude:: ../_static/web/openlayers-wfst.html
-   :language: javascript
-   :lines: 131,136-148
-   :emphasize-lines: 131,137
-
-Přidáme nástroje pro kreslení nových prvků a změnu existujících prvků v mapě:
-
-.. literalinclude:: ../_static/web/openlayers-wfst.html
-   :language: javascript
-   :lines: 154-157,163-171,178-180,193-195
-
-Nakonec vyrobíme tlačítko s ukládací funkcí
-
-.. literalinclude:: ../_static/web/openlayers-wfst.html
-   :language: javascript
-   :lines: 182-192
-
-.. rubric:: Poznámky
+.. rubric:: :secnotoc:`Poznámky`
 
 .. [#f1] Příklady OpenLayers http://openlayers.org/dev/examples/
 .. [#f2] Dokumentace OpenLayers http://docs.openlayers.org/
 .. [#f3] API dokumentace http://dev.openlayers.org/releases/OpenLayers-2.13.1/doc/apidocs/files/OpenLayers-js.html
-.. [#f4] Příklad pro TinyOWS a OpenLayers http://mapserver.org/tinyows/openlayershowto.html

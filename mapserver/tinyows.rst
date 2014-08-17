@@ -44,9 +44,12 @@ Nakonec přidáme vrstvy
    :lines: 17-23
 
 Všiměte si:
+
     1. do vrstvy můžeme zapsat ``writeable="1"``
     2. je potřeba nastavit tzv. xml `namespace`
     3. parametrem ``srid=4326,...`` specifikujeme podporované souř. systémy
+
+Úplná dokumentace ke konfiguračním souboru je `dostupná online <http://mapserver.org/tinyows/configfile.html>`_
 
 Test nastavení
 --------------
@@ -58,7 +61,13 @@ Opět ve webovém prohlížeči zadáme URL
 
     http://localhost/cgi-bin/vugtkwfs?service=wfs&request=getcapabilities
  
-Měli bychom obdržet
+Měli bychom obdržet::
 
+    <?xml version='1.0' encoding='UTF-8'?>
+    <WFS_Capabilities version='1.1.0' updateSequence='0' xmlns='http://www.opengis.net/wfs' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:ogc='http://www.opengis.net/ogc' xmlns:gml='http://www.opengis.net/gml' xmlns:ows='http://www.opengis.net/ows' xmlns:xlink='http://www.w3.org/1999/xlink' xsi:schemaLocation='http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/wfs.xsd' >
+     <ows:ServiceIdentification>
 
-.. todo:: Link na dokumentaci k tinyows
+     [...]
+
+    </ogc:Filter_Capabilities>
+    </WFS_Capabilities>
