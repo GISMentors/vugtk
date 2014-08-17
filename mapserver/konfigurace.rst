@@ -126,7 +126,7 @@ Odpověď ze serveru by měla následovat::
 
 Následovat může připojení služby WMS do programu QGIS, viz :ref:`my-reference-label`.
 
-.. rubric:: Poznámky
+.. rubric:: :secnotoc:`Poznámky`
 
 .. [#f1] MapServer lze využít ve vlastích programech díky API, potom je
   konfigurace vyřešena přímo v programu a ne v externím konfiguračním souboru.
