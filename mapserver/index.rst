@@ -15,10 +15,6 @@ MapServer je tradičně používaný v české veřejné správě (např. mapov�
 ÚHÚL, nahlížení do katastru nemovitostí, obecní mapové portály), je velice
 oblíbený českými firmami poskytujícími webové GIS řešení.
 
-.. rubric:: Poznámky
-
-.. [#f1] Prezentace o porovnání různých mapových serverů, http://www.slideshare.net/gatewaygeomatics.com/wms-performance-shootout-2011
-
 .. rubric:: :secnotoc:`Témata`
 
 .. toctree::
@@ -27,3 +23,8 @@ oblíbený českými firmami poskytujícími webové GIS řešení.
    konfigurace.rst
    tinyows.rst
    qgis-ws.rst
+
+.. rubric:: :secnotoc:`Poznámky`
+
+.. [#f1] Prezentace o porovnání různých mapových serverů, http://www.slideshare.net/gatewaygeomatics.com/wms-performance-shootout-2011
+
