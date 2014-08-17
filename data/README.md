@@ -37,20 +37,20 @@ PgAdmin3:
 
 **Postup pro vytvoření DB ze zdrojových dat:**
 
-1) vytvoření DB
+1. vytvoření DB
 
           export DB=gismentors_vugtk; dropdb $DB ; createdb $DB && \
           psql $DB -c "create extension postgis; create extension postgis_topology"
 
-2) Import ST (Okresy)
+2. Import ST (Okresy)
 
           vfr2pg --type ST_UKSH --dbname $DB --layer Okresy --geom OriginalniHranice
 
-3) Import OB (Obce, Ulice, StavebniObjekty)
+3. Import OB (Obce, Ulice, StavebniObjekty)
 
           vfr2pg --type OB_539058_UKSH --dbname $DB --layer Obce,Ulice,StavebniObjekty --geom OriginalniHranice
 
-4) Vytvoření dávky
+4. Vytvoření dávky
 
          pg_dump -Fc -b -v -Z 9 -O -x -f postgis/gismentors_vugtk.backup gismentors_vugtk
 
