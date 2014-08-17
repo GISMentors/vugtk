@@ -52,7 +52,7 @@ PgAdmin3:
 
 4. Vytvoření dávky
 
-         pg_dump -Fc -b -v -Z 9 -O -x -f postgis/gismentors_vugtk.backup gismentors_vugtk
+         pg_dump -Fc -b -v -Z 9 -O -f postgis/gismentors_vugtk.backup gismentors_vugtk
 
 
 viz http://freegis.fsv.cvut.cz/gwiki/RUIAN_/_OGR-VFR#Konverze_do_PostGIS
