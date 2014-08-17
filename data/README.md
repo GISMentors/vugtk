@@ -27,7 +27,7 @@ Příkazová řádka:
 
 PgAdmin3:
 
-1. vytvořit novou DB
+1. vytvořit novou DB 'gismentors_vugtk'
 2. vytvořit nového uživatele 'gismentors' pokud neexistuje
 
          CREATE USER gismentors WITH PASSWORD 'xxx';
