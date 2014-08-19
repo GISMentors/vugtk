@@ -7,7 +7,7 @@ Leaflet
 
 `Leaflet <http://leafletjs.com/>`_ je knihovna v jazyce :wikipedia:`JavaScript`, pomocí které
 lze vytvářet webové mapové aplikace. Na rozdíl od :doc:`openlayers` je to spíše
-knihovna lehká, určená pro méně funkční aplikace. To ji ovšem nijak
+knihovna lehká, určená pro jednodušší aplikace. To ji ovšem nijak
 nediskvalifikuje pro specifické případy použití.
 
 .. note:: Uvedený příklad si můžete `zobrazit v prohlížeči
@@ -32,20 +32,20 @@ odkázat na knihovnu Leaflet.
 Mapa
 ----
 
-V dalším kroku vytvoříme mapový objekt a vložíme do připraveného elementu
-``map``:
+V dalším kroku vytvoříme mapový objekt a vložíme ho do připraveného elementu
+``map``.
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
    :lines: 15-16
 
-Mapě byl nastaven pohled se středem na zeměpisných souřadnicích ``50.14, 14.43`` a úroveň přiblížení ``13``.
+Mapě byl nastaven pohled se středem na zeměpisných souřadnicích ``50.16, 14.43`` a úroveň přiblížení ``12``.
 
 
 Vrstvy
 ------
 
-Přidáme do mapy dlaždicovanou vrstvu ``tileLayer``
+Přidáme do mapy dlaždicovanou vrstvu ``tileLayer``.
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
