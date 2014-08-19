@@ -4,6 +4,9 @@ Závěr
 Užitečné odkazy
 ---------------
 
+Dokumentace QGIS
+    http://docs.qgis.org/2.4/en/docs/index.html
+
 MapServer Mapfile 
     http://mapserver.org/mapfile/index.html
 
