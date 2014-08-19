@@ -156,7 +156,12 @@ Vytvořenou SQL dávku nahrajeme do databáze *gismentors_vugtk*:
 ogr2ogr
 ^^^^^^^
 
-.. todo::
+.. code-block:: bash
+
+   ogr2ogr -f PostgreSQL \
+   PG:"dbname=gismentors_vugtk host=geo102.fsv.cvut.cz user=gismentors password=vugtk14 active_schema=landa" \
+   stavebniobjekty.shp \
+   -lco FID=gid
 
 .. rubric:: :secnotoc:`Poznámky`
 
