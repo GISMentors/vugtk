@@ -1,5 +1,5 @@
 <tinyows online_resource="/services/vugtkwfs"
-    schema_dir="/usr/share/tinyows/schema/"
+    schema_dir="/usr/share/tinyows/schema/" check_schema="0"
     log="/tmp/tinyows.log" log_level="15">
 
 
