@@ -3,8 +3,8 @@
     log="/tmp/tinyows.log" log_level="15">
 
 
- <pg host="localhost" user="jachym" password="jach" dbname="gismentors_vugtk" port="5433"/>
- <!-- pg host="geo102.fsv.cvut.cz" user="gismentors" password="cald08" dbname="gismentors_vugtk" /-->
+ <!--pg host="localhost" user="jachym" password="jach" dbname="gismentors_vugtk" port="5433"/-->
+ <pg host="geo102.fsv.cvut.cz" user="gismentors" password="vugtk14" dbname="gismentors_vugtk" />
 
  <metadata name="VUGTK WFS Server"
            title="TinyOWS Server pro skoleni VUGTK" />

@@ -15,8 +15,8 @@ WEB
   METADATA
     "ows_title"            "VUGTK Skoleni"
     "ows_abstract"         "VUGTK Skoleni Open Source GIS, GISmentors.eu"
-    "wfs_onlineresource"   "http://localhost/cgi-bin/vugtkwfs?"  ## Recommended
-    "wms_onlineresource"   "http://localhost/cgi-bin/vugtkwms?"  ## Recommended
+    #"wfs_onlineresource"   "http://localhost/cgi-bin/vugtkwfs?"  ## Recommended
+    "wms_onlineresource"   "http://localhost/vugtkwms?"  ## Recommended
     "ows_srs"              "EPSG:4326 EPSG:5514 EPSG:32633 EPSG:3035 EPSG:3857"
     "ows_enable_request"   "*"
   END
@@ -65,8 +65,8 @@ LAYER
   TYPE LINE
   STATUS ON
   CONNECTIONTYPE POSTGIS
-  #CONNECTION "host=geo102.fsv.cvut.cz dbname=gismentors_vugtk user=gismentors password=cald08"
-  CONNECTION "user=jachym password=jach dbname=gismentors_vugtk port=5433 host=localhost"
+  CONNECTION "host=geo102.fsv.cvut.cz dbname=gismentors_vugtk user=gismentors password=vugtk14"
+  #CONNECTION "user=jachym password=jach dbname=gismentors_vugtk port=5433 host=localhost"
   DATA "definicnicara from ulice"
   DUMP TRUE
   CLASS
@@ -89,8 +89,8 @@ LAYER
   TYPE POLYGON
   STATUS ON
   CONNECTIONTYPE POSTGIS
-  #CONNECTION "host=geo102.fsv.cvut.cz dbname=gismentors_vugtk user=gismentors password=cald08"
-  CONNECTION "user=jachym password=jach dbname=gismentors_vugtk port=5433 host=localhost"
+  CONNECTION "host=geo102.fsv.cvut.cz dbname=gismentors_vugtk user=gismentors password=vugtk14"
+  #CONNECTION "user=jachym password=jach dbname=gismentors_vugtk port=5433 host=localhost"
   DATA "originalnihranice from stavebniobjekty"
   DUMP TRUE
   CLASS
