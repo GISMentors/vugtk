@@ -1,4 +1,4 @@
-Edidace dat z geodatabáze PostGIS v QGISu
+Editace dat z geodatabáze PostGIS v QGISu
 =========================================
 
 Editace vektorových dat uložených v geodatabázi PostGIS probíhá
