@@ -37,19 +37,18 @@ kterého chceme soubory načíst.
 
 Posléze se objeví dialog, který umožňuje vybrat jaké vektorové vrstvy
 chceme do QGISu načíst, v našem případě vybereme všechny
-:fignote:`(1)` vrtsvy kromě *obce* (kterou jsme přidali již dříve).
+:fignote:`(1)` vrstvy kromě *obce* (kterou jsme přidali již dříve).
 
 .. figure:: qgis-load-shapefile-dir-select.png
 
             Výběr vektorových vrstev k načtení do QGISu
 
-Výsledek může vypadat například (:doc:`symbologii vrstev <symbologie>` nastavíme později)
-takto:
+Výsledek může vypadat například takto (:doc:`symbologii vrstev <symbologie>` nastavíme později):
 
 .. figure:: qgis-all-shapefiles.png
             :width: 800px
 
-Souřadnicový systém načtených vektorových dat je S-JTSK (:epsg:`5514`), viz obr. níže.
+Souřadnicový systém načtených vektorových dat je uveden v pravém dolním rohu okna QGIS, v našem případě je to S-JTSK (:epsg:`5514`).
 
 .. figure:: qgis-statusbar-srs.png
             :width: 800px
