@@ -36,7 +36,7 @@ Nakonec vyrobíme tlačítko s ukládací funkcí
 
 Závěr
 -----
-Tento příklad už při pohledu na zdrojový kód je celkem kompexní - v úvodu
+Tento příklad už při pohledu na zdrojový kód je celkem komplexní - v úvodu
 souboru jsme museli nastavit kaskádové styly jednotlivých tlačítek, museli jsme
 definovat funkce pro mazání prvků a pro odeslání prvků protokolem WFS-T na
 server, přidávat tlačítka pro editaci geometrií ručně v kódu. 

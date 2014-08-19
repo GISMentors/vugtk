@@ -14,19 +14,19 @@ přidávání služeb OGC WMS a WMTS.
 .. figure:: ../qgis/qgis-wms-wmts-menu.png
 
 Jako první krok musíme přidat adresu WMS serveru, ze kterého chceme načíst
-vrstvy. Zadejme server `ČUZK ZABAGED <http://geoportal.cuzk.cz/(S(h5zf1imhatnjn05loejijgrx))/Default.aspx?mode=TextMeta&side=wms.verejne&metadataID=CZ-CUZK-WMS-ZABAGED-P&metadataXSL=metadata.sluzba&head_tab=sekce-03-gp&menu=3113>`_ http://geoportal.cuzk.cz/WMS_ZABAGED_PUB/WMService.aspx
+vrstvy. Zadejme server `ČÚZK ZABAGED <http://geoportal.cuzk.cz/(S(h5zf1imhatnjn05loejijgrx))/Default.aspx?mode=TextMeta&side=wms.verejne&metadataID=CZ-CUZK-WMS-ZABAGED-P&metadataXSL=metadata.sluzba&head_tab=sekce-03-gp&menu=3113>`_ http://geoportal.cuzk.cz/WMS_ZABAGED_PUB/WMService.aspx
 
 .. figure:: ../qgis/qgis-add-wms-server.png
 
-Nyní se již můžeme připojit na službu ČUZK a vybrat si vrstvy, které chceme
+Nyní se již můžeme připojit na službu ČÚZK a vybrat si vrstvy, které chceme
 zobrazit:
 
 .. figure:: ../qgis/qgis-wms-layer-selection.png
 
 V obrázku je patrno, že:
 
-    * jsme vybrali dvě vrsrtvy (Vodstvo a Územní jednotky)
-    * a změnili jsme souř. systém z přednastaveného WGS 84 na S-JTSK (EPSDG:5514)
+    * jsme vybrali dvě vrstvy (Vodstvo a Územní jednotky)
+    * a změnili jsme souřadnicový systém z přednastaveného WGS 84 na S-JTSK (EPSG:5514)
 
 Po přidání nové vrstvy do mapy (WMS server pro nás sloučí obě vrstvy do jednoho
 obrázku):
@@ -46,8 +46,8 @@ A zobrazit můžeme například vrstvu ulic.
 
 .. figure:: ../qgis/qgis-wms-zabaged-local.png
 
-    Obrázek obsahuje pokladové ortofoto z lokálního souboru, Vodstvo a
-    Územní jednotky z WMS služby ČUZK a uliční síť (data z RUAIN) z námi
+    Obrázek obsahuje podkladové ortofoto z lokálního souboru, Vodstvo a
+    Územní jednotky z WMS služby ČÚZK a uliční síť (data z RÚAIN) z námi
     nakonfigurované lokální WMS
 
 Připojení lokální WFS
@@ -59,12 +59,12 @@ TinyOWS, viz kapitola :ref:`tinyows`), adresa serveru je
 
 .. figure:: ../qgis/qgis-wfs-server.png
 
-A můžeme přidat vrstvu ``budovy`` (v souř. systému S-JTSK):
+A můžeme přidat vrstvu ``budovy`` (v souřadnicovém systému S-JTSK):
 
 .. figure:: ../qgis/qgis-wfs-budovy.png
     
     Na obrázku je podkladová mapa z lokálního souboru, uliční síť z naší služby
-    WMS a stavební objekty RUAIN, publikované naším TinyOWS WFS serverem.
+    WMS a stavební objekty RÚAIN, publikované naším TinyOWS WFS serverem.
 
 Editace dat pomocí protokolu WFS
 --------------------------------

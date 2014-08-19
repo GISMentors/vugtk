@@ -28,7 +28,7 @@ Data obsahují přidružený soubor ve formátu :wikipedia-en:`World file` (``jg
             :width: 800px
 
 Vzhledem k tomu, že jsou naše data georeferencována v souřadnicovém systému UTM
-33N (:epsg:`32633`), je potřeba nastavení rastrové vrtsvy v QGISu
+33N (:epsg:`32633`), je potřeba nastavení rastrové vrstvy v QGISu
 změnit.
 
 .. figure:: qgis-raster-properties.png
@@ -43,11 +43,11 @@ V tomto dialogu vybereme souřadnicový systém UTM 33N.
 .. figure:: qgis-raster-properties-srs-dialog.png
             :width: 600px
 
-QGIS narozdíl např. :wikipedia:`Esri ArcGIS` neprovádí transformaci
+QGIS na rozdíl např. :wikipedia:`Esri ArcGIS` neprovádí transformaci
 datových vrstev připojených v odlišných souřadnicových systémech
 automaticky. Tuto možnost je nutno povolit a zároveň zvolit cílový
 souřadnicový systém mapového okna. Poté již QGIS zobrazí datové vrstvy
-"přes sebe", tj. transformavené do zvoleného souřadnicového
+"přes sebe", tj. transformované do zvoleného souřadnicového
 systému. Volbu automatické transformace povolíme v dialogu *Vlastnosti
 projektu* dostupné z menu aplikace.
 
@@ -62,7 +62,7 @@ v našem případě S-JTSK (:epsg:`5514`) a nastavení potvrdíme
 .. figure:: qgis-project-on-fly-trans.png
             :width: 600px
 
-Nyní by se měla rastrová vrstva ortofoto již zobrazit natransformována
+Nyní by se měla rastrová vrstva ortofoto již zobrazit "natransformována"
 do souřadnicového systému S-JTSK.
 
 .. figure:: qgis-all-layers.png

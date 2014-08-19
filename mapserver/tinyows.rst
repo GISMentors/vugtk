@@ -9,12 +9,12 @@ Konfigurace TinyOWS může být vložena přímo do ``mapfile``, ale kvůli
 přehlednosti použijeme druhý způsob - konfiguraci v :download:`samostatném
 souboru <../data/tinyows.xml>`.
 
-Jedná se o soubor ve formátu XML. Každý soubor je zasociovaný s jedním
+Jedná se o soubor ve formátu XML. Každý soubor je asociovaný s jedním
 připojením do databáze PostgreSQL.
 
 Konfigurace
 -----------
-Nejprve začneme informacemi o službe a logování. Konfigurační hodnoty jsou
+Nejprve začneme informacemi o službě a logování. Konfigurační hodnoty jsou
 nastaveny v atributech kořenového elementu:
 
 .. literalinclude:: ../data/tinyows.xml
@@ -25,7 +25,7 @@ Následuje informace o spojení s databází PostgreSQL:
 .. literalinclude:: ../data/tinyows.xml
    :language: xml
    :lines: 6,7 
-Následují metodata publikovaných služeb:
+Následují metadata publikovaných služeb:
 
 .. literalinclude:: ../data/tinyows.xml
    :language: xml
@@ -43,11 +43,11 @@ Nakonec přidáme vrstvy
    :language: xml
    :lines: 17-23
 
-Všiměte si:
+Všimněte si:
 
     1. do vrstvy můžeme zapsat ``writeable="1"``
     2. je potřeba nastavit tzv. xml `namespace`
-    3. parametrem ``srid=4326,...`` specifikujeme podporované souř. systémy
+    3. parametrem ``srid=4326,...`` specifikujeme podporované souřadnicový systémy
 
 Úplná dokumentace ke konfiguračním souboru je `dostupná online <http://mapserver.org/tinyows/configfile.html>`_
 

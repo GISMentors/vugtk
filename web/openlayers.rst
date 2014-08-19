@@ -33,13 +33,13 @@ odkázat na knihovnu OpenLayers.
 
 .. note:: Protože zobrazujeme vektorová data, je potřeba použít malý program
     instalovaný na serveru, tzv. "proxy", která požadavky směřující na vzdálený
-    server přesměruje ze serveru lokálního. Více viz :wikipedia:`Cross-site_scripting <Cross-site_scripting>`
+    server přesměruje ze serveru lokálního. Více viz :wikipedia:`Cross-site_scripting`
 
-    OpenLayers (na rozdíl od Leafletu) umožňují kompletní práci se souř. systémy
-    na straně klineta (webového prohlížeče). V praxi to znamená, že vstupní data
-    mohou být např. v souř. systému S-JTSK, ale jsou zobrazeny na pokladové mapě
+    OpenLayers (na rozdíl od Leafletu) umožňují kompletní práci se souřadnicové systémy
+    na straně klienta (webového prohlížeče). V praxi to znamená, že vstupní data
+    mohou být např. v souřadnicové systému S-JTSK, ale jsou zobrazeny na podkladové mapě
     v "web mercator" projekci. To je možné díky knihovně `Proj4js <http://trac.osgeo.org/proj4js/>`_.
-    Tato knihovna se ale v poslední době značně mění a v jeji starší verzi
+    Tato knihovna se ale v poslední době značně mění a v její starší verzi
     *kompatibilní s OpenLayers 2* není bohužel korektně implementováno Křovákovo
     zobrazení. Proto se v tomto příkladu odkazujeme na verzi Proj4js na
     `národním geoportálu INSPIRE <http://geoportal.gov.cz/web/guest/map>`_.
@@ -54,7 +54,7 @@ Po načtení stránky (``onload`` parametry v elementu ``body``), se spustí fun
 Mapa
 ----
 
-V dalším kroce vytvoříme funkci ``init()``, ve které vytvoříme mapový objekt a
+V dalším kroku vytvoříme funkci ``init()``, ve které vytvoříme mapový objekt a
 vložíme do připraveného elementu ``map``:
 
 .. literalinclude:: ../_static/web/openlayers.html
@@ -76,7 +76,7 @@ připravenou, stačí ji jen použít. Tato vrstva je v OpenLayers brána jako
 Mapě byl nastaven pohled se středem na souřadnicích 50.16, 14.43 a úroveň přiblížení
 je 13.
 
-.. note:: V příkladu je vidět, že souřadnice jsou transformovány ze souř.
+.. note:: V příkladu je vidět, že souřadnice jsou transformovány ze souřadnicovém
     systému WGS84 do souřadnicového systému mapy - což je tzv. Spherical
     Mercator EPSG:3857, který se využívá např. ve službě Google Maps.
 

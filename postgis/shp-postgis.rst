@@ -25,7 +25,7 @@ V dialogu vybereme cílovou databázi [#f1]_.
 .. figure:: qgis-db-manager-priv.png
             :width: 700px
 
-            Uživatel ``gismentors`` má právo v databázi vytvářet vlastní schémeta.
+            Uživatel ``gismentors`` má právo v databázi vytvářet vlastní schémata.
 
 Můžeme procházet metadata jednotlivých vrstev uložených v geodatabázi.
 
@@ -48,7 +48,7 @@ nejprve toto schéma vytvoříme.
 .. figure:: qgis-db-manager-new-schema-prop.png
             :width: 700px
 
-            V nově vytvořem schéma již má uživatel ``gismentors`` má právo zápisu.
+            V nově vytvořeném schéma již má uživatel ``gismentors`` má právo zápisu.
 
 Import Esri Shapefile do PostGISu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,7 +61,7 @@ modul **Spit (Shapefile import)** dostupný z menu.
 
 V dialogu zvolíme databázi :fignote:`(1)` [#f1]_, ke které se
 připojíme :fignote:`(2)`. Přidáme soubor ve formátu Esri Shapefile
-:fignote:`(3)` určený k importu, definujeme název pro výstuplní
+:fignote:`(3)` určený k importu, definujeme název pro výstupní
 databázovou tabulku a schéma :fignote:`(4)`. Jako poslední určíme kód
 souřadnicového systému (v tomto případě :wikipedia:`EPSG`) vektorových
 dat :fignote:`(5)`.
@@ -72,7 +72,7 @@ dat :fignote:`(5)`.
 .. figure:: qgis-spit-progress.png
 
 Naimportovaná vrstva z geodatabáze PostGIS se nezobrazí automaticky,
-musíme ji :doc:`přidat manualně <qgis>`.
+musíme ji :doc:`přidat manuálně <qgis>`.
 
 .. figure:: qgis-add-pg-so.png
             :width: 700px
@@ -90,7 +90,7 @@ Shapefile naimportujeme z menu
 .. figure:: shp-import-menu.png
            :width: 200px
 
-anebo z nástrojé lišty.
+anebo z nástrojové lišty.
 
 .. figure:: shp-import.png
            :width: 250px
@@ -159,7 +159,7 @@ ogr2ogr
 .. code-block:: bash
 
    ogr2ogr -f PostgreSQL \
-   PG:"dbname=gismentors_vugtk host=geo102.fsv.cvut.cz user=gismentors password=vugtk14 active_schema=landa" \
+   PG:"dbname=gismentors_vugtk host=geo102.fsv.cvut.cz user=gismentors password=XXX active_schema=landa" \
    stavebniobjekty.shp \
    -lco FID=gid
 

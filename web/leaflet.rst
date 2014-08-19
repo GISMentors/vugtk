@@ -32,7 +32,7 @@ odkázat na knihovnu Leaflet.
 Mapa
 ----
 
-V dalším kroce vytvoříme mapový objekt a vložíme do připraveného elementu
+V dalším kroku vytvoříme mapový objekt a vložíme do připraveného elementu
 ``map``:
 
 .. literalinclude:: ../_static/web/leaflet.html
@@ -76,10 +76,10 @@ A nakonec WMS vrstvu s vektorovými daty budov.
 Vrstva WFS
 ----------
 
-Přidáme vektorovou vrstvu z našeho WFS serveru. Data musí být jeprve načtena ze
+Přidáme vektorovou vrstvu z našeho WFS serveru. Data musí být nejprve načtena ze
 serveru a až poté můžeme vrstvu vytvořit. Nemůžeme se odkázat na WFS server
-přímo s dotazme ``GetFeature``, protože pravděpodobně narazíme na problém s
-různými doménami :wikipedia:`Cross-site_scripting <Cross-site_scripting>`, proto budeme postupovat přes
+přímo s dotazem ``GetFeature``, protože pravděpodobně narazíme na problém s
+různými doménami :wikipedia:`Cross-site scripting`, proto budeme postupovat přes
 už vytvořený skript (``proxy``).
 
 .. literalinclude:: ../_static/web/leaflet.html

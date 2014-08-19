@@ -19,7 +19,7 @@ V dialogu nejprve nadefinujeme parametry připojení k databázi.
 Nastavíme:
 
 * název spojení :fignote:`(1)`
-* hostilel (adresa serveru, pokud je to localhost nemusíme vyplňovat) :fignote:`(2)`
+* hostitel (adresa serveru, pokud je to localhost nemusíme vyplňovat) :fignote:`(2)`
 * databáze, ke které se chceme připojit :fignote:`(3)`
 * uživatelské jméno a heslo pro připojení k databázi :fignote:`(4)`
 

@@ -6,14 +6,14 @@ velice dobře dokumentován na `na webových stránkách <http://mapserver.org/m
 
 Jednotlivé konfigurační sekce jsou započaty klíčovým slovem a ukončeny slovem
 ``END``. Je lhostejno, používáte-li velká či malá písmena nebo nepoužíváte-li
-odsazení jednotlivých sekcí. Pro větší čitelnost se ale doporučuje používate
-``VELKÁ PÍSMENA`` v jednolivých sekcích a používat odsazení.
+odsazení jednotlivých sekcí. Pro větší čitelnost se ale doporučuje používat
+``VELKÁ PÍSMENA`` v jednotlivých sekcích a používat odsazení.
 
 Metadata mapového projektu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Celý příklad *mapfile* si můžete :download:`prohlídnout v souboru <../data/vugtk.map>`. 
 
-Mapfile začíná slovem ``MAP`` a je ukončem zmiňovaným ``END``, v ůvodní sekci
+Mapfile začíná slovem ``MAP`` a je ukončen zmiňovaným ``END``, v úvodní sekci
 jsou základní údaje o projektu:
 
 .. literalinclude:: ../data/vugtk.map
@@ -38,7 +38,7 @@ připraveného lokálně uloženého rastrového souboru.
 .. literalinclude:: ../data/vugtk.map
    :lines: 29-40
 
-Všiměte si, že rastrový snímek je v jiném souřadném systému, než celý projekt
+Všimněte si, že rastrový snímek je v jiném souřadném systému, než celý projekt
 (UTM vs. S-JTSK).
 
 OWS Proxy
@@ -46,9 +46,9 @@ OWS Proxy
 MapServer může sloužit také jako proxy pro další služby OGC OWS a kombinovat tak
 data z různých zdrojů do jednoho obrázku. To lze také využít, chceme-li
 rasterizovat externí datový zdroj např. WFS nebo potřebujeme-li přidat podporu
-pro souř.  systémy, které zdrojový server nepodporuje. 
+pro souřadnicové systémy, které zdrojový server nepodporuje. 
 
-V příkladu níže zobrazíme vrstvnice z WMS serveru ČUZK
+V příkladu níže zobrazíme vrstevnice z WMS serveru ČÚZK
 
 .. literalinclude:: ../data/vugtk.map
    :lines: 42-56
@@ -58,7 +58,7 @@ Vektorová vrstva
 MapServer podporuje všechny myslitelné vektorové formáty (díky knihovně
 GDAL/OGR). V našem příkladu se připojíme na dříve vytvořenou databázi PostGIS a
 zobrazíme v ní vrstvu ``stavebniobjekty`` pod názvem ``budovy``. Všimněte si
-sekcte ``METADATA``, ve které nastavíme některé atributy budoucích webových
+sekce ``METADATA``, ve které nastavíme některé atributy budoucích webových
 služeb (WMS, WFS).
    
 .. literalinclude:: ../data/vugtk.map
@@ -89,7 +89,7 @@ nebo zkopírovat `mapserv.exe` pod novým jménem a toto jméno použít::
 
 Testování konfigurace mapserveru
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-První možností je testova konfiguraci pomocí programu ``shp2img``, který vezme
+První možností je testovat konfiguraci pomocí programu ``shp2img``, který vezme
 výchozí nastavení v námi vytvořeném konfiguračním mapfile a vyrobí z něj
 obrázek
 

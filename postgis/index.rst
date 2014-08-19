@@ -6,7 +6,7 @@ PostGIS
    :width: 100px
 
 `PostGIS <http://postgis.net>`_ je nadstavba pro objektově-relační
-databázový systém `PostgreSQL <http://www.postgresql.org>`_ doplňujicí
+databázový systém `PostgreSQL <http://www.postgresql.org>`_ doplňující
 podporu pro uložení a manipulaci s geografickými objekty
 (tzv. geoprvky). PostGIS implementuje specifikaci `OGC Simple Features
 <http://www.opengeospatial.org/standards/sfa>`_ a ve verzi 2.0 přidává

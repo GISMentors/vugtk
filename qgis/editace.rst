@@ -29,7 +29,7 @@ Po přepnutí do editačního módu se vrstva zobrazí včetně lomových bodů
 .. figure:: qgis-edit-mode.png
             :width: 800px
 
-**Editační nástorová lišta** QGISu umožňuje
+**Editační nástrojová lišta** QGISu umožňuje
 
 .. figure:: qgis-edit-toolbar.png
             :width: 350px
@@ -38,11 +38,11 @@ Po přepnutí do editačního módu se vrstva zobrazí včetně lomových bodů
    :class: toc
 
    +-----+-------------------------------------------------+
-   | |A| |  přídávat nové prvky                            |
+   | |A| |  přidávat nové prvky                            |
    +-----+-------------------------------------------------+
    | |M| |  přesunovat existující prvky                    |
    +-----+-------------------------------------------------+
-   | |N| |  modifikovat uzly (přídávat, mazat a přesunovat)|
+   | |N| |  modifikovat uzly (přidávat, mazat a přesunovat)|
    +-----+-------------------------------------------------+
    | |D| |  smazat vybrané prvky                           |
    +-----+-------------------------------------------------+
