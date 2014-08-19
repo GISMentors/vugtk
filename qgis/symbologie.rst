@@ -1,9 +1,9 @@
-Nastavení symbologie
---------------------
+Nastavení symbologie mapových vrstev
+------------------------------------
 
 Nastavit symbologii pro danou mapovou vrstvu lze z dialogu
-:item:`Vlastnosti` dostupného z kontextového menu anebo dvojklikem nad danou
-vrstvou.
+:item:`Vlastnosti` dostupného z kontextového menu anebo dvojklikem nad
+zvolenou mapovou vrstvou.
 
 .. figure:: qgis-vector-properties.png
             :width: 275px
