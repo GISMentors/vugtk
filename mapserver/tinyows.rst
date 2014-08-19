@@ -2,15 +2,17 @@
 
 TinyOWS
 =======
-TinyOWS je projekt postavený na knihovnách MapServeru a poskytuje rozhraní `OGC
-WFS <http://opengeospatial.org/standards/wfs>`_ a především WFS-T. 
+
+`TinyOWS <http://mapserver.org/tinyows/>`_ je projekt postavený na
+knihovnách MapServeru a poskytuje rozhraní `OGC WFS
+<http://opengeospatial.org/standards/wfs>`_ a především WFS-T.
 
 Konfigurace TinyOWS může být vložena přímo do ``mapfile``, ale kvůli
 přehlednosti použijeme druhý způsob - konfiguraci v :download:`samostatném
 souboru <../data/tinyows.xml>`.
 
-Jedná se o soubor ve formátu XML. Každý soubor je asociovaný s jedním
-připojením do databáze PostgreSQL.
+Jedná se o soubor ve formátu :wikipedia:`XML`. Každý soubor je
+asociovaný s jedním připojením do databáze PostgreSQL.
 
 Konfigurace
 -----------
