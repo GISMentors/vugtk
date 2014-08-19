@@ -6,13 +6,13 @@ OpenLayers
     :align: right
     :alt: OpenLayers logo
 
-`OpenLayers <http://openlayers.org>`_ je knihovna v jazyce JavaScript, pomocí které
+`OpenLayers <http://openlayers.org>`_ je knihovna v jazyce :wikipedia:`JavaScript`, pomocí které
 lze vytvářet webové mapové aplikace. Jedná se o velice komplexní knihovnu,
 schopnou zobrazovat velké množství formátů dat a služeb, ať už proprietárních,
-tak standardních.
+tak těch postavených na standardech a technických normách.
 
 V současné době se pracuje na zcela nové verzi knihovny `OpenLayers 3
-<http://ol3.js.org>`_, která se od současné stabilní verze značně liší. Tento
+<http://ol3js.org>`_, která se od současné stabilní verze značně liší. Tento
 příklad vychází stále ještě ze současné aktuální `OpenLayers 2.13
 <http://openlayers.org>`_.
 
@@ -32,17 +32,20 @@ identifikátorem ``map``, do kterého chceme zobrazit mapu. Dále se potřebujem
 odkázat na knihovnu OpenLayers.
 
 .. note:: Protože zobrazujeme vektorová data, je potřeba použít malý program
-    instalovaný na serveru, tzv. "proxy", která požadavky směřující na vzdálený
-    server přesměruje ze serveru lokálního. Více viz :wikipedia:`Cross-site_scripting`
+    instalovaný na serveru, tzv. "proxy", který požadavky směřující na vzdálený
+    server přesměruje ze serveru lokálního. Více viz :wikipedia:`Cross-site scripting`.
 
-    OpenLayers (na rozdíl od Leafletu) umožňují kompletní práci se souřadnicové systémy
-    na straně klienta (webového prohlížeče). V praxi to znamená, že vstupní data
-    mohou být např. v souřadnicové systému S-JTSK, ale jsou zobrazeny na podkladové mapě
-    v "web mercator" projekci. To je možné díky knihovně `Proj4js <http://trac.osgeo.org/proj4js/>`_.
-    Tato knihovna se ale v poslední době značně mění a v její starší verzi
-    *kompatibilní s OpenLayers 2* není bohužel korektně implementováno Křovákovo
-    zobrazení. Proto se v tomto příkladu odkazujeme na verzi Proj4js na
-    `národním geoportálu INSPIRE <http://geoportal.gov.cz/web/guest/map>`_.
+    OpenLayers (na rozdíl od :doc:`leaflet`) umožňují kompletní práci
+    se souřadnicové systémy na straně klienta (webového prohlížeče). V
+    praxi to znamená, že vstupní data mohou být např. v souřadnicové
+    systému S-JTSK, ale jsou zobrazeny na podkladové mapě v "web
+    mercator" :epsg:`3857`. To je možné díky knihovně `Proj4js
+    <http://trac.osgeo.org/proj4js/>`_.  Tato knihovna se ale v
+    poslední době značně mění. V její starší verzi *kompatibilní s
+    OpenLayers 2* není bohužel korektně implementováno Křovákovo
+    zobrazení. Proto se v tomto příkladu odkazujeme na verzi Proj4js
+    na `národním geoportálu INSPIRE
+    <http://geoportal.gov.cz/web/guest/map>`_.
 
 .. literalinclude:: ../_static/web/openlayers.html
     :language: html
@@ -67,20 +70,20 @@ Vrstvy
 Dále přidáme do mapy dlaždicovanou vrstvu ze zdroje `OpenStreetMap
 <http://openstreetmap.org>`_. OpenLayers pro nás mají vrstvu speciálně
 připravenou, stačí ji jen použít. Tato vrstva je v OpenLayers brána jako
-**základní**, od ní jsou odvozeny některé charakteristiky celé mapy.
+*základní*, od ní jsou odvozeny některé charakteristiky celé mapy.
 
 .. literalinclude:: ../_static/web/openlayers.html
    :language: javascript
    :lines: 23-28
 
-Mapě byl nastaven pohled se středem na souřadnicích 50.16, 14.43 a úroveň přiblížení
-je 13.
+Mapě byl nastaven pohled se středem o zeměpisných souřadnicích ``50.16, 14.43`` a úroveň přiblížení
+je ``13``.
 
 .. note:: V příkladu je vidět, že souřadnice jsou transformovány ze souřadnicovém
-    systému WGS84 do souřadnicového systému mapy - což je tzv. Spherical
-    Mercator EPSG:3857, který se využívá např. ve službě Google Maps.
+    systému WGS-84 (:epsg:`4326`) do souřadnicového systému mapy - což je tzv. Spherical
+    Mercator :epsg:`3857`, který se využívá např. ve službě Google Maps.
 
-Dále přidáme letecký snímek námi vypublikované služby WMS s leteckým snímkem
+Dále přidáme letecký snímek námi :ref:`vypublikované služby WMS s leteckým snímkem <mapserver-raster>`.
 
 .. literalinclude:: ../_static/web/openlayers.html
    :language: javascript
@@ -89,8 +92,8 @@ Dále přidáme letecký snímek námi vypublikované služby WMS s leteckým sn
 Vrstva WFS
 ----------
 
-A nakonec vrstvu WFS s vektorovými daty budov z námi předem nakonfigurované
-služby WFS.
+A nakonec :ref:`WFS vrstvu s vektorovými daty budov
+<mapserver-vector>` z námi předem nakonfigurované služby WFS.
 
 .. literalinclude:: ../_static/web/openlayers.html
    :language: javascript
