@@ -49,3 +49,20 @@ načíst :fignote:`(2)`.
 .. figure:: qgis-postgis-layers.png
            :width: 700px
 
+Alternativní postup (datový katalog)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Připojení k databázi PostGIS je možné definovat i v rámci *datového
+katalogu (prohlížeči)*.
+
+.. figure:: qgis-catalog-new.png
+            :width: 300px
+
+.. figure:: qgis-postgis-new-settings.png
+           :width: 400px
+
+Vektorovou vrstvu z geodatabáze PostGIS přetáhneme z datového katalogu
+do okna *Vrstvy*.
+
+.. figure:: qgis-catalog-layer.png
+           :width: 700px
