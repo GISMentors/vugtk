@@ -1,8 +1,8 @@
 Web
 ===
 Všichni sledujeme trend, kdy webové aplikace postupně nahrazují v různých
-oblastech ty desktopové. Ne jinak je tomu i u mapových aplikací. Webové
-prostředí dnes zvládne zobrazit deseti tisíce vektorových prvků na pokladu
+oblastech ty desktopové. Nejinak je tomu i u mapových aplikací. Webové
+prostředí dnes zvládne zobrazit desetitisíce vektorových prvků na podkladu
 leteckých snímků včetně možnosti editace těchto prvků.
 
 V této části si představíme dvě nejčastěji používané open source
