@@ -1,7 +1,7 @@
 Editace vektorových dat
 -----------------------
 
-QGIS umožňuje editaci [#f1]_ různých formátu vektorových dat včetně formátu
+QGIS umožňuje editaci [#f1]_ různých formátů vektorových dat včetně formátu
 :wikipedia:`Esri Shapefile`.
 
 .. admonition:: Poznámka pro experty
@@ -84,9 +84,9 @@ Po přepnutí do editačního módu se vrstva zobrazí včetně lomových bodů
 Příklad přidání nového prvku
 ============================
 
-Z nástrojové lišty vybereme nástroj pro přidávaní nových prvků |A|.
+Z nástrojové lišty vybereme nástroj pro přidávání nových prvků |A|.
 
-Lomové body volíme stisknutím levého tlačítka myši. Posledně zvolený
+Lomové body volíme stisknutím levého tlačítka myši. Poslední zvolený
 lomový bod můžeme vrátit zpět pomocí klávesy ``Backspace``.
 
 .. figure:: qgis-edit-new-feature.png
