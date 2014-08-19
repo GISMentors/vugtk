@@ -31,10 +31,10 @@
                 var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "/services/vugtkwms",
                     {
                         layers: 'ortofoto_local',
-                        format: 'image/jpeg',
-                        projection: new OpenLayers.Projection("EPSG:3857")
+                        format: 'image/jpeg'
                     },
                     {
+                        projection: new OpenLayers.Projection("EPSG:3857"),
                         attribution: "Letecký snímek VUGTK"
                     });
                 map.addLayer(ortofoto);
