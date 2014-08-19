@@ -7,13 +7,12 @@ OpenLayers
     :alt: OpenLayers logo
 
 `OpenLayers <http://openlayers.org>`_ je knihovna v jazyce :wikipedia:`JavaScript`, pomocí které
-lze vytvářet webové mapové aplikace. Jedná se o velice komplexní knihovnu,
-schopnou zobrazovat velké množství formátů dat a služeb, ať už proprietárních,
+lze vytvářet webové mapové aplikace. Jedná se o velice komplexní knihovnu schopnou zobrazovat velké množství formátů dat a služeb - ať už proprietárních,
 tak těch postavených na standardech a technických normách.
 
 V současné době se pracuje na zcela nové verzi knihovny `OpenLayers 3
 <http://ol3js.org>`_, která se od současné stabilní verze značně liší. Tento
-příklad vychází stále ještě ze současné aktuální `OpenLayers 2.13
+příklad vychází stále ještě ze současné stabilní verze `OpenLayers 2.13
 <http://openlayers.org>`_.
 
 .. note:: Uvedený příklad si můžete `zobrazit v prohlížeči
@@ -36,9 +35,9 @@ odkázat na knihovnu OpenLayers.
     server přesměruje ze serveru lokálního. Více viz :wikipedia:`Cross-site scripting`.
 
     OpenLayers (na rozdíl od :doc:`leaflet`) umožňují kompletní práci
-    se souřadnicové systémy na straně klienta (webového prohlížeče). V
-    praxi to znamená, že vstupní data mohou být např. v souřadnicové
-    systému S-JTSK, ale jsou zobrazeny na podkladové mapě v "web
+    se souřadnicovými systémy na straně klienta (webového prohlížeče). V
+    praxi to znamená, že např. vstupní data mohou být v souřadnicovém
+    systému S-JTSK :epsg:`5514`, ale jsou zobrazena na podkladové mapě v souř. systému "web
     mercator" :epsg:`3857`. To je možné díky knihovně `Proj4js
     <http://trac.osgeo.org/proj4js/>`_.  Tato knihovna se ale v
     poslední době značně mění. V její starší verzi *kompatibilní s
@@ -51,7 +50,7 @@ odkázat na knihovnu OpenLayers.
     :language: html
     :lines: 7, 64-66
 
-Po načtení stránky (``onload`` parametry v elementu ``body``), se spustí funkce
+Po načtení stránky (``onload`` parametry v elementu ``body``) se spustí funkce
 ``init()``.
 
 Mapa
@@ -76,12 +75,11 @@ připravenou, stačí ji jen použít. Tato vrstva je v OpenLayers brána jako
    :language: javascript
    :lines: 23-28
 
-Mapě byl nastaven pohled se středem o zeměpisných souřadnicích ``50.16, 14.43`` a úroveň přiblížení
-je ``13``.
+Mapě byl nastaven pohled se středem na zeměpisných souřadnicích ``50.16, 14.43`` a úroveň přiblížení ``13``.
 
-.. note:: V příkladu je vidět, že souřadnice jsou transformovány ze souřadnicovém
+.. note:: V příkladu je vidět, že souřadnice jsou transformovány ze souřadnicového
     systému WGS-84 (:epsg:`4326`) do souřadnicového systému mapy - což je tzv. Spherical
-    Mercator :epsg:`3857`, který se využívá např. ve službě Google Maps.
+    Mercator (:epsg:`3857`), který se využívá např. ve službě Google Maps.
 
 Dále přidáme letecký snímek námi :ref:`vypublikované služby WMS s leteckým snímkem <mapserver-raster>`.
 
