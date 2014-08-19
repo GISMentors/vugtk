@@ -3,18 +3,18 @@
 Zobrazení WMS a WFS vrstev v QGISu
 ==================================
 
-Program QGIS obsahuje nástroje pro připojení a práci s externími datovými zdroji
+Program :doc:`../qgis/index` obsahuje nástroje pro připojení a práci s externími datovými zdroji
 pomocí služeb `OGC OWS <http://opengeospatial.org/standards/>`_.
 
 Připojení vzdálené WMS
 -----------------------
 V *menu* :menuselection:`Vrstva --> Přidat vrstvu WMS/WMTS` spustíme nástroj pro
-přidávání služeb OGC WMS a WMTS.
+přidávání služeb OGC :wikipedia:`WMS` a :wikipedia-en:`WMTS`.
 
 .. figure:: ../qgis/qgis-wms-wmts-menu.png
 
 Jako první krok musíme přidat adresu WMS serveru, ze kterého chceme načíst
-vrstvy. Zadejme server `ČÚZK ZABAGED <http://geoportal.cuzk.cz/(S(h5zf1imhatnjn05loejijgrx))/Default.aspx?mode=TextMeta&side=wms.verejne&metadataID=CZ-CUZK-WMS-ZABAGED-P&metadataXSL=metadata.sluzba&head_tab=sekce-03-gp&menu=3113>`_ http://geoportal.cuzk.cz/WMS_ZABAGED_PUB/WMService.aspx
+vrstvy. Zadejme server `ČÚZK ZABAGED <http://geoportal.cuzk.cz/(S(h5zf1imhatnjn05loejijgrx))/Default.aspx?mode=TextMeta&side=wms.verejne&metadataID=CZ-CUZK-WMS-ZABAGED-P&metadataXSL=metadata.sluzba&head_tab=sekce-03-gp&menu=3113>`_  - http://geoportal.cuzk.cz/WMS_ZABAGED_PUB/WMService.aspx
 
 .. figure:: ../qgis/qgis-add-wms-server.png
 
@@ -23,10 +23,10 @@ zobrazit:
 
 .. figure:: ../qgis/qgis-wms-layer-selection.png
 
-V obrázku je patrno, že:
+Z obrázku je patrno, že:
 
     * jsme vybrali dvě vrstvy (Vodstvo a Územní jednotky)
-    * a změnili jsme souřadnicový systém z přednastaveného WGS 84 na S-JTSK (EPSG:5514)
+    * a změnili jsme souřadnicový systém z přednastaveného WGS 84 na S-JTSK (:epsg:`5514`)
 
 Po přidání nové vrstvy do mapy (WMS server pro nás sloučí obě vrstvy do jednoho
 obrázku):
@@ -38,11 +38,11 @@ Na obrázku jsou data zobrazena na dříve přidaném pokladu ortofoto.
 Připojení lokální WMS
 ---------------------
 
-Postupujeme stejným způsobem, přidáme server s url 
+Postupujeme stejným způsobem, přidáme server s URL 
 
     http://localhost/cgi-bin/vugtkwms
 
-A zobrazit můžeme například vrstvu ulic.
+A zobrazit můžeme například vrstvu :map:`ulic`.
 
 .. figure:: ../qgis/qgis-wms-zabaged-local.png
 
@@ -52,14 +52,13 @@ A zobrazit můžeme například vrstvu ulic.
 
 Připojení lokální WFS
 ---------------------
-Podobně jako jsme přidali lokální server WMS můžeme přidat lokální WFS (z
-TinyOWS, viz kapitola :ref:`tinyows`), adresa serveru je 
+Podobně jako jsme přidali lokální server WMS můžeme přidat lokální WFS (viz kapitola :doc:`tinyows`). Adresa serveru je 
 
     http://localhost/cgi-bin/vugtkwfs
 
 .. figure:: ../qgis/qgis-wfs-server.png
 
-A můžeme přidat vrstvu ``budovy`` (v souřadnicovém systému S-JTSK):
+A můžeme přidat vrstvu :map:`budovy` (v souřadnicovém systému S-JTSK :epsg:`5514`):
 
 .. figure:: ../qgis/qgis-wfs-budovy.png
     
@@ -68,13 +67,13 @@ A můžeme přidat vrstvu ``budovy`` (v souřadnicovém systému S-JTSK):
 
 Editace dat pomocí protokolu WFS
 --------------------------------
-Stejně jako u editace vektorových vrstev z lokálně uloženého souboru nebo z
-připojené databáze (PostGIS, SpatiaLite, ...), můžeme editovat vrstvu připojenou
-pomocí protokolu WFS-T.
+Stejně jako u :doc:`editace <../qgis/editace>` vektorových vrstev z lokálně uloženého souboru nebo z
+připojené databáze (:doc:`../postgis/index`, SpatiaLite, ...), můžeme editovat vrstvu připojenou
+pomocí protokolu *WFS-T*.
 
 .. figure:: ../qgis/qgis-wfs-start-editing.png
 
-Po zakreslení nového prvku (polygonu) a ukončení editace *Pravým tlačítkem
+Po zakreslení nového prvku (polygonu) a ukončení editace *pravým tlačítkem
 myši*, se objeví formulář pro vyplnění atributů. Po jeho odeslání je prvek
 uložen lokálně.
 
@@ -84,5 +83,5 @@ Aby byly změny promítnuty na server, je potřeba ukončit editaci.
 
 .. figure:: ../qgis/qgis-wfs-save-database.png
 
-Pokud se neobjeví žádná chybová hláška, byly všechny prvky uloženy
-prostřednictvím protokolu OGC WFS-T do databáze PostGIS.
+Pokud se neobjeví žádná chybová zpráva, byly všechny prvky uloženy
+prostřednictvím protokolu OGC WFS-T do geodatabáze :doc:`../postgis/index`.
