@@ -108,15 +108,50 @@ možnosti včetně transformace do jiného souřadnicového systému
             :width: 200px
 
 
-pgAdmin3
-^^^^^^^^
+pgAdmin
+^^^^^^^
 
-.. todo::
+Vektorová data ve formátu Esri Shapefile lze do databáze PostGIS
+naimportovat pomocí zásuvného modulu **PostGIS Shapefile and DBF loader**
+aplikace `pgAdmin <http://www.pgadmin.org/>`_.
+
+.. figure:: pgadmin-import.png
+            :width: 350px
+
+Nejprve definujeme soubor ve formátu Esri Shapefile :fignote:`(1)`,
+cílové databázové schéma :fignote:`(2)` a souřadnicový systém
+:fignote:`(3)`.
+
+.. figure:: pgadmin-create.png
+
+.. figure:: pgadmin-new-layer.png
+            :width: 700px
 
 shp2pgsql
 ^^^^^^^^^
 
-.. todo::
+`shp2pgsql
+<http://postgis.net/docs/manual-2.1/using_postgis_dbmanagement.html#shp2pgsql_usage>`_
+je konzolový nástroj, který umožňuje import vektorových dat ve formátu Esri
+Shapefile do geodatabáze PostGIS. Tento nástroj je součástí instalace
+PostGIS.
+
+Nejprve vytvoříme SQL dávku
+
+.. code-block:: bash
+
+               shp2pgsql -s 5514 stavebniobjekty.shp landa.stavebniobjekty > so.sql
+
+* ``-s`` definuje souřadnicový systém,
+* ``stavebniobjekty.shp`` je název vstupního souboru ve formátu Esri Shapefile,
+* ``landa.stavebniobjekty`` je název výstupního databázového schématu a tabulky,
+* ``> so.sql`` dávka je uložena do souboru ``so.sql``.
+
+Vytvořenou SQL dávku nahrajeme do databáze *gismentors_vugtk*:
+
+.. code-block:: bash
+
+                psql gismentors_vugtk -U gismentors -W -h geo102.fsv.cvut.cz -f so.sql
 
 ogr2ogr
 ^^^^^^^
