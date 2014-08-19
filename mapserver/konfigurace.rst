@@ -30,6 +30,8 @@ Neméně důležitá jsou metadata pro služby OWS (*OGC Web Service Common*) a 
 .. literalinclude:: ../data/vugtk.map
    :lines: 12-23
 
+.. _mapserver-raster:
+
 Rastrová vrstva
 ^^^^^^^^^^^^^^^
 Následuje konfigurace vrstev. Jako příklad uvedeme nejprve rastrovou vrstvu z
@@ -52,6 +54,8 @@ V příkladu níže zobrazíme vrstevnice z WMS serveru ČÚZK
 
 .. literalinclude:: ../data/vugtk.map
    :lines: 42-56
+
+.. _mapserver-vector:
 
 Vektorová vrstva
 ^^^^^^^^^^^^^^^^

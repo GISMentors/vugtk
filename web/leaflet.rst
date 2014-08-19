@@ -5,9 +5,9 @@ Leaflet
     :align: right
     :alt: Leaflet logo
 
-`Leaflet <http://leafletjs.com/>`_ je knihovna v jazyce JavaScript, pomocí které
-lze vytvářet webové mapové aplikace. Na rozdíl od OpenLayers je to spíše
-knihovna lehká, určená na méně funkční aplikace. To ji ovšem nijak
+`Leaflet <http://leafletjs.com/>`_ je knihovna v jazyce :wikipedia:`JavaScript`, pomocí které
+lze vytvářet webové mapové aplikace. Na rozdíl od :doc:`openlayers` je to spíše
+knihovna lehká, určená pro méně funkční aplikace. To ji ovšem nijak
 nediskvalifikuje pro specifické případy použití.
 
 .. note:: Uvedený příklad si můžete `zobrazit v prohlížeči
@@ -39,39 +39,41 @@ V dalším kroku vytvoříme mapový objekt a vložíme do připraveného elemen
    :language: javascript
    :lines: 15-16
 
-Mapě byl nastaven pohled se středem na souřadnicích 50.14, 14.43 a úroveň přiblížení
-je 13.
+Mapě byl nastaven pohled se středem na zeměpisných souřadnicích ``50.14, 14.43`` a úroveň přiblížení ``13``.
 
 
 Vrstvy
 ------
 
-Dále přidáme do mapy dlaždicovanou vrstvu ``tileLayer``
+Přidáme do mapy dlaždicovanou vrstvu ``tileLayer``
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
    :lines: 18-22
 
-Dále přidáme letecký snímek námi vypublikované služby WMS s leteckým snímkem
+Dále přidáme letecký snímek námi :ref:`vypublikované služby WMS s leteckým snímkem <mapserver-raster>`.
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
    :lines: 28-33
 
-A nakonec WMS vrstvu s vektorovými daty budov.
+A nakonec :ref:`WMS vrstvu s vektorovými daty budov <mapserver-vector>`.
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
    :lines: 36-42
 
-.. note:: Jak bylo řečeno, Leaflet je ve své podstatě jednoduchá knihovna, resp.
-    knihovna, jejíž cíl není přizpůsobit se požadovaným datům a ty "nějak"
-    zobrazit, ale knihovna, která vyžaduje data určitým způsobem předzpracovaná
-    a ty následně zobrazuje velice dobře na většině myslitelných zařízeních.
+.. note:: Jak již bylo řečeno, Leaflet je ve své podstatě jednoduchá
+    knihovna, jejíž cíl není přizpůsobit se požadovaným datům a ty
+    "nějak" zobrazit. Jde o knihovnu, která vyžaduje data určitým
+    způsobem předzpracovaná a ty následně zobrazuje velice dobře na
+    většině myslitelných zařízeních.
 
-    Leaflet nepodporuje standard OGC WFS, i když má skvělou podporu pro
-    zobrazování vektorových dat. Ty ale nemohou přicházet ve formátu GML, ale
-    nejlépe ve formátu GeoJSON.
+    Leaflet nepodporuje standard OGC WFS, i když má skvělou podporu
+    pro zobrazování vektorových dat. Ty ale nemohou přicházet ve
+    formátu :wikipedia-en:`GML <Geography Markup Language>` (dle
+    standardu OGC WFS), ale nejlépe ve formátu
+    :wikipedia-en:`GeoJSON`.
 
 Vrstva WFS
 ----------
@@ -79,8 +81,8 @@ Vrstva WFS
 Přidáme vektorovou vrstvu z našeho WFS serveru. Data musí být nejprve načtena ze
 serveru a až poté můžeme vrstvu vytvořit. Nemůžeme se odkázat na WFS server
 přímo s dotazem ``GetFeature``, protože pravděpodobně narazíme na problém s
-různými doménami :wikipedia:`Cross-site scripting`, proto budeme postupovat přes
-už vytvořený skript (``proxy``).
+různými doménami (viz :wikipedia:`Cross-site scripting`). Proto budeme postupovat přes
+již vytvořený skript (``proxy``).
 
 .. literalinclude:: ../_static/web/leaflet.html
    :language: javascript
