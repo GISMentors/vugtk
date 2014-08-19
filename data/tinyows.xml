@@ -20,7 +20,7 @@
         ns_uri="http://www.tinyows.org/"
         srid="4326,5514,3857,32633,3035"
         schema="wfstest"
-        name="wfstest.stavebniobjekty"
+        name="stavebniobjekty"
         title="Budovy RUIAN" />
 
  <layer retrievable="1"
@@ -29,7 +29,7 @@
         ns_uri="http://www.tinyows.org/"
         srid="4326,5514,3857,32633,3035"
         schema="wfstest"
-        name="wfstest.ulice"
+        name="ulice"
         title="Ulice RUIAN" />
 
 </tinyows>
