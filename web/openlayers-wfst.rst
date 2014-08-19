@@ -38,19 +38,19 @@ Nakonec vyrobíme tlačítko s ukládací funkcí:
 
 Závěr
 -----
-Tento příklad už při pohledu na zdrojový kód je celkem komplexní - v úvodu
+Tento příklad je (už při pohledu na zdrojový kód) poměrně komplexní - v úvodu
 souboru jsme museli nastavit kaskádové styly jednotlivých tlačítek, museli jsme
 definovat funkce pro mazání prvků a pro odeslání prvků protokolem WFS-T na
 server, přidávat tlačítka pro editaci geometrií ručně v kódu. 
 
-OpenLayers je poměrně komplexní knihovna, na úrovni jiných programátorských
+OpenLayers je poměrně komplexní knihovna - na úrovni jiných programátorských
 knihoven používaných v GIS. S její pomocí lze vytvořit velice funkční aplikace,
 ale jen velice málo funkcí je *hotových k okamžitému použití* pro
 laika-neprogramátora.
 
 Další věc, která v příkladu není nijak ošetřena, je autorizace a autentifikace
-uživatele. Předpokládáme čtení/zápis pro všechny. Obecně toto je na webu
-problém, mapová aplikace musí být dostupná ze stejné URL, jako je WFS server
+uživatele. Předpokládáme čtení/zápis pro všechny. Obecně je toto na webu
+problém, mapová aplikace musí být dostupná ze stejné URL jako WFS server -
 tak, aby nedocházelo k problémům s tzv. *cross site scripting*. V tom případě
 totiž není jednoduše možné předat přihlašovací údaje vzdálenému serveru, neboť
 jsou zachyceny právě na službě proxy.
