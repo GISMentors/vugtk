@@ -1,10 +1,10 @@
-<tinyows online_resource="http://127.0.0.1/cgi-bin/vugtkwfs"
+<tinyows online_resource="/services/vugtkwfs"
     schema_dir="/usr/share/tinyows/schema/"
     log="/tmp/tinyows.log" log_level="15">
 
 
- <!--pg host="localhost" user="jachym" password="jach" dbname="gismentors_vugtk" port="5433"/-->
- <pg host="geo102.fsv.cvut.cz" user="gismentors" password="vugtk14" dbname="gismentors_vugtk" />
+ <!-- pg host="localhost" user="jachym" password="jach" dbname="gismentors_vugtk" port="5433"/-->
+ <pg host="geo102.fsv.cvut.cz" user="gismentors" password="vugtk14" schema="wfstest" dbname="gismentors_vugtk" />
 
  <metadata name="VUGTK WFS Server"
            title="TinyOWS Server pro skoleni VUGTK" />
@@ -19,7 +19,8 @@
         ns_prefix="tows"
         ns_uri="http://www.tinyows.org/"
         srid="4326,5514,3857,32633,3035"
-        name="stavebniobjekty"
+        schema="wfstest"
+        name="wfstest.stavebniobjekty"
         title="Budovy RUIAN" />
 
  <layer retrievable="1"
@@ -27,7 +28,8 @@
         ns_prefix="tows"
         ns_uri="http://www.tinyows.org/"
         srid="4326,5514,3857,32633,3035"
-        name="ulice"
+        schema="wfstest"
+        name="wfstest.ulice"
         title="Ulice RUIAN" />
 
 </tinyows>

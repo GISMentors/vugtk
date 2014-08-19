@@ -116,7 +116,7 @@
                 ), 13);
 
                 // přidáme námi vypublikovanou vrstvu WMS s leteckým snímkem
-                var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "http://localhost/cgi-bin/vugtkwms",
+                var ortofoto = new OpenLayers.Layer.WMS("Ortofoto", "/services/vugtkwms",
                     {
                         layers: 'ortofoto_local',
                         format: 'image/jpeg'
@@ -134,16 +134,16 @@
 
                 // přidáme námi vypublikovanou vrstvu WFS s vektorovými daty
                 wfs = new OpenLayers.Layer.Vector("Budovy", {
-                    strategies: [new OpenLayers.Strategy.BBOX(), saveStrategy],
+                    strategies: [new OpenLayers.Strategy.Fixed(), saveStrategy],
                     projection: new OpenLayers.Projection("EPSG:5514"),
                     protocol: new OpenLayers.Protocol.WFS({
                     version: "1.1.0",
                     srsName: "EPSG:5514",
-                    url: "http://localhost/cgi-bin/vugtkwfs",
+                    url: "/services/vugtkwfs",
                     featureNS :  "http://www.tinyows.org/",
                     featureType: "stavebniobjekty",
-                    geometryName: "originalnihranice",
-                    schema: "http://localhost/cgi-bin/vugtkwfs?service=wfs&request=DescribeFeatureType&version=1.1.0&typename=tows:stavebniobjekty"
+                    geometryName: "geom",
+                    schema: "/services/vugtkwfs?service=wfs&request=DescribeFeatureType&version=1.1.0&typename=tows:stavebniobjekty"
                     })
                 });
                 map.addLayer(wfs);

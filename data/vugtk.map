@@ -15,8 +15,8 @@ WEB
   METADATA
     "ows_title"            "VUGTK Skoleni"
     "ows_abstract"         "VUGTK Skoleni Open Source GIS, GISmentors.eu"
-    #"wfs_onlineresource"   "http://localhost/cgi-bin/vugtkwfs?"  ## Recommended
-    "wms_onlineresource"   "http://localhost/vugtkwms?"  ## Recommended
+    #"wfs_onlineresource"   "http://46.28.111.140/cgi-bin/mapserv?"  ## Recommended
+    "wms_onlineresource"   "http://46.28.111.140/services/vugtkwms?"  ## Recommended
     "ows_srs"              "EPSG:4326 EPSG:5514 EPSG:32633 EPSG:3035 EPSG:3857"
     "ows_enable_request"   "*"
   END
