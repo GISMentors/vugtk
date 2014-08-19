@@ -2,25 +2,23 @@ Konfigurace MapServeru
 ----------------------
 MapServer nedisponuje žádným grafickým uživatelským rozhraním. Až na
 výjimky [#f1]_ se konfiguruje pomocí jednoduchého textového souboru, který je
-velice dobře dokumentován na `na webových stránkách <http://mapserver.org/mapfile/index.html>`_.
+velice dobře zdokumentován na `webových stránkách <http://mapserver.org/mapfile/index.html>`_.
 
 Jednotlivé konfigurační sekce jsou započaty klíčovým slovem a ukončeny slovem
 ``END``. Je lhostejno, používáte-li velká či malá písmena nebo nepoužíváte-li
-odsazení jednotlivých sekcí. Pro větší čitelnost se ale doporučuje používate
-``VELKÁ PÍSMENA`` v jednolivých sekcích a používat odsazení.
+odsazení jednotlivých sekcí. Pro lepší čitelnost je však doporučeno ``VELKÁ PÍSMENA`` i odsazení používat.
 
 Metadata mapového projektu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Celý příklad *mapfile* si můžete :download:`prohlídnout v souboru <../data/vugtk.map>`. 
+Celý příklad *mapfile* si můžete prohlédnout v :download:`souboru <../data/vugtk.map>`. 
 
-Mapfile začíná slovem ``MAP`` a je ukončem zmiňovaným ``END``, v ůvodní sekci
+Mapfile začíná slovem ``MAP`` a je ukončem zmiňovaným ``END``, v úvodní sekci
 jsou základní údaje o projektu:
 
 .. literalinclude:: ../data/vugtk.map
    :lines: 1-7, 106
 
-Je důležité nakonfigurovat výchozí souřadný systém projektu, použijeme k tomu
-EPSG kód pro S-JTSK.
+Důležité je nakonfigurovat výchozí souřadný systém projektu, v našem případě je to S-JTSK (:epsg:`5514`)
 
 .. literalinclude:: ../data/vugtk.map
    :lines: 25-27
@@ -38,7 +36,7 @@ připraveného lokálně uloženého rastrového souboru.
 .. literalinclude:: ../data/vugtk.map
    :lines: 29-40
 
-Všiměte si, že rastrový snímek je v jiném souřadném systému, než celý projekt
+Všimněte si, že rastrový soubor je v jiném souřadném systému než celý projekt
 (UTM vs. S-JTSK).
 
 OWS Proxy
@@ -48,7 +46,7 @@ data z různých zdrojů do jednoho obrázku. To lze také využít, chceme-li
 rasterizovat externí datový zdroj např. WFS nebo potřebujeme-li přidat podporu
 pro souř.  systémy, které zdrojový server nepodporuje. 
 
-V příkladu níže zobrazíme vrstvnice z WMS serveru ČUZK
+V příkladu níže zobrazíme vrstevnice z WMS serveru ČÚZK
 
 .. literalinclude:: ../data/vugtk.map
    :lines: 42-56
@@ -56,9 +54,9 @@ V příkladu níže zobrazíme vrstvnice z WMS serveru ČUZK
 Vektorová vrstva
 ^^^^^^^^^^^^^^^^
 MapServer podporuje všechny myslitelné vektorové formáty (díky knihovně
-GDAL/OGR). V našem příkladu se připojíme na dříve vytvořenou databázi PostGIS a
-zobrazíme v ní vrstvu ``stavebniobjekty`` pod názvem ``budovy``. Všimněte si
-sekcte ``METADATA``, ve které nastavíme některé atributy budoucích webových
+GDAL/OGR). V našem příkladu se připojíme na dříve vytvořenou PostGIS databázi a
+zobrazíme si z ní vrstvu ``stavebniobjekty``, kterou v mapfile nazveme ``budovy``. Všimněte si
+sekce ``METADATA``, ve které nastavíme některé atributy budoucích webových
 služeb (WMS, WFS).
    
 .. literalinclude:: ../data/vugtk.map
@@ -73,8 +71,7 @@ daný mapový soubor, např::
 
     http://localhost/cgi-bin/mapserver.exe?map=c:\data\skoleni\vugtk.map
 
-Lepší možnost je, *exportovat* proměnnou prostředí ``MS_MAPFILE``, což můžeme
-buď v nastavení webového server [#f2]_ ::
+Lepší možnost je *exportovat* proměnnou prostředí ``MS_MAPFILE``, čehož docílíme buď nastavením webového serveru [#f2]_ ::
 
     Alias /mywms /usr/lib/cgi-bin/mapserver
     <Location /mywms>
@@ -83,15 +80,15 @@ buď v nastavení webového server [#f2]_ ::
        SetEnv MS_MAPFILE /path/to/mymapfile.map
     </Location>
 
-nebo zkopírovat `mapserv.exe` pod novým jménem a toto jméno použít::
+nebo můžeme zkopírovat `mapserv.exe` pod novým jménem a toto jméno použít::
 
     SetEnvIf Request_URI "/cgi-bin/vugtkwms" MS_MAPFILE=/path/to/mymap.map
 
 Testování konfigurace mapserveru
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-První možností je testova konfiguraci pomocí programu ``shp2img``, který vezme
+První možností je testovat konfiguraci pomocí programu ``shp2img``, který vezme
 výchozí nastavení v námi vytvořeném konfiguračním mapfile a vyrobí z něj
-obrázek
+obrázek.
 
 .. admonition:: Testování mapového souboru v příkazové řádce
    :class: cmd
@@ -115,7 +112,7 @@ Do webového prohlížeče můžeme nyní zadat adresu WMS s dotazem
 
 http://localhost/cgi-bin/vugtkwms?service=wms&request=getcapabilities
 
-Odpověď ze serveru by měla následovat::
+Odpověď ze serveru by měla být::
 
     <?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
     <WMS_Capabilities version="1.3.0"  xmlns="http://www.opengis.net/wms"   xmlns:sld="http://www.opengis.net/sld"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xmlns:ms...
