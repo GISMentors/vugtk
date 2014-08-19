@@ -1,7 +1,7 @@
 Nahrání vektorových dat do geodatabáze PostGIS
 ----------------------------------------------
 
-V této části workshopu si ukážeme postup nahrání vektorových dat ve
+V této části workshopu si ukážeme postup importu vektorových dat ve
 formátu :wikipedia:`Esri Shapefile` do geodatabáze :doc:`index`.
 
 Postup pro QGIS
@@ -9,7 +9,7 @@ Postup pro QGIS
 
 Workshop je koncipován tak, že každý uživatel pracuje ve vlastní
 databázovém schématu. Toto schéma vytvoříme pomocí zásuvného modulu
-**DB Manager**. Tento zásuvný modul je součástí základní instalace a
+*DB Manager*. Tento zásuvný modul je součástí základní instalace a
 je dostupný automaticky.
 
 Vytvoření databázového schématu
@@ -36,7 +36,7 @@ Můžeme procházet metadata jednotlivých vrstev uložených v geodatabázi.
             schématu *public* pouze právo čtení, data nemůže
             modifikovat.
 
-V našem případě uložíme vlastní vektorová data do *vlastního schématu*,
+V našem případě uložíme vektorová data do *vlastního schématu*,
 nejprve toto schéma vytvoříme.
 
 .. figure:: qgis-db-manager-new-schema.png
@@ -48,13 +48,14 @@ nejprve toto schéma vytvoříme.
 .. figure:: qgis-db-manager-new-schema-prop.png
             :width: 700px
 
-            V nově vytvořeném schéma již má uživatel ``gismentors`` má právo zápisu.
+            V nově vytvořeném schématu již má uživatel ``gismentors``
+            právo zápisu.
 
 Import Esri Shapefile do PostGISu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Import vektorových dat ve formátu Esri Shapefile umožňuje zásuvný
-modul **Spit (Shapefile import)** dostupný z menu.
+modul *Spit (Shapefile import)* dostupný z menu aplikace QGIS.
 
 .. figure:: qgis-spit-menu.png
             :width: 350px
@@ -63,8 +64,8 @@ V dialogu zvolíme databázi :fignote:`(1)` [#f1]_, ke které se
 připojíme :fignote:`(2)`. Přidáme soubor ve formátu Esri Shapefile
 :fignote:`(3)` určený k importu, definujeme název pro výstupní
 databázovou tabulku a schéma :fignote:`(4)`. Jako poslední určíme kód
-souřadnicového systému (v tomto případě :wikipedia:`EPSG`) vektorových
-dat :fignote:`(5)`.
+souřadnicového systému (v tomto případě S-JTSK, tj. :epsg:`5514`)
+vektorových dat :fignote:`(5)`.
 
 .. figure:: qgis-spit-dialog.png
             :width: 700px
@@ -84,13 +85,13 @@ DB Manager
 ^^^^^^^^^^
 
 Nahrání dat ve formátu Esri Shapefile do geodatabáze PostGIS umožňuje
-v QGISu i zásuvný modul **DB Manager**. Soubor ve formátu Esri
+v QGISu i zásuvný modul *DB Manager*. Soubor ve formátu Esri
 Shapefile naimportujeme z menu
 
 .. figure:: shp-import-menu.png
            :width: 200px
 
-anebo z nástrojové lišty.
+anebo z nástrojové lišty DB Manageru.
 
 .. figure:: shp-import.png
            :width: 250px
@@ -112,7 +113,7 @@ pgAdmin
 ^^^^^^^
 
 Vektorová data ve formátu Esri Shapefile lze do databáze PostGIS
-naimportovat pomocí zásuvného modulu **PostGIS Shapefile and DBF loader**
+naimportovat pomocí zásuvného modulu *PostGIS Shapefile and DBF loader*
 aplikace `pgAdmin <http://www.pgadmin.org/>`_.
 
 .. figure:: pgadmin-import.png
@@ -155,6 +156,10 @@ Vytvořenou SQL dávku nahrajeme do databáze *gismentors_vugtk*:
 
 ogr2ogr
 ^^^^^^^
+
+`ogr2ogr <http://www.gdal.org/ogr2ogr.html>`_ je konzolový nástroj
+knihovny `GDAL <http://gdal.org>`_ umožňující konverzi mezi datovými
+formáty podporovanými touto knihovnou.
 
 .. code-block:: bash
 
