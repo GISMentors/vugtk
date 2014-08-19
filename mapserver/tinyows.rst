@@ -22,6 +22,7 @@ nastaveny v atributech kořenového elementu:
 .. literalinclude:: ../data/tinyows.xml
    :language: xml
    :lines: 1-3, 33
+
 Následuje informace o spojení s databází PostgreSQL:
 
 .. literalinclude:: ../data/tinyows.xml
