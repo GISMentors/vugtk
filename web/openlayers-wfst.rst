@@ -24,6 +24,8 @@ Nejprve přidáme do seznamu strategií u vrstvy WFS strategii pro ukládání:
    :lines: 131,136-148
    :emphasize-lines: 131,137
 
+.. note:: Zkontrolovat název sloupce s geometrií
+
 Přidáme nástroje pro kreslení nových prvků a změnu existujících prvků v mapě:
 
 .. literalinclude:: ../_static/web/openlayers-wfst.html

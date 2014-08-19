@@ -19,8 +19,8 @@
         ns_prefix="tows"
         ns_uri="http://www.tinyows.org/"
         srid="4326,5514,3857,32633,3035"
+        name="mystavebniobjekty"
         schema="wfstest"
-        name="stavebniobjekty"
         title="Budovy RUIAN" />
 
  <layer retrievable="1"
@@ -28,8 +28,8 @@
         ns_prefix="tows"
         ns_uri="http://www.tinyows.org/"
         srid="4326,5514,3857,32633,3035"
+        name="myulice"
         schema="wfstest"
-        name="ulice"
         title="Ulice RUIAN" />
 
 </tinyows>
