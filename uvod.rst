@@ -2,8 +2,8 @@
 ----
 
 Vítejte na workshopu *možnosti webových mapových technologií pro "Nové
-mapování katastrálního operátu" - I.část* zaměřený na open source GIS
-nástroje.
+mapování katastrálního operátu" - I.část* zaměřený na :wikipedia:`open
+source <Otevřený software>` GIS nástroje.
 
 Scénář workshopu
 ================
@@ -21,6 +21,9 @@ Scénář workshopu
 #. přidá do QGISu :doc:`WFS vrstvu <mapserver/qgis-ws>` z mapového serveru, data může editovat přes WFS-T
 #. vytvoří jednoduchou webovou aplikaci pomocí knihovny :doc:`web/leaflet`
 #. vytvoří j́ednoduchou webovou aplikaci pomocí knihovny :doc:`web/openlayers`, data může :doc:`editovat <web/openlayers-wfst>` přes WFS-T
+
+.. figure:: _static/osnova.png
+            :width: 800px
 
 Délka workshopu
 ^^^^^^^^^^^^^^^
