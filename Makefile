@@ -5,7 +5,7 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
-BUILDDIR      = _build
+BUILDDIR      = ../vugtk-build
 PROJECT_NAME  = "GeoPython"
 
 # User-friendly check for sphinx-build
