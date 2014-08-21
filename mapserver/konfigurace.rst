@@ -2,7 +2,7 @@ Konfigurace MapServeru
 ----------------------
 MapServer nedisponuje žádným grafickým uživatelským rozhraním. Až na
 výjimky [#f1]_ se konfiguruje pomocí jednoduchého textového souboru, který je
-velice dobře dokumentován na `webových stránkách <http://mapserver.org/mapfile/index.html>`_ projektu.
+velice dobře zdokumentován na `webových stránkách <http://mapserver.org/mapfile/index.html>`_ projektu.
 
 Jednotlivé konfigurační sekce jsou započaty klíčovým slovem a ukončeny slovem
 ``END``. Je lhostejno, používáte-li velká či malá písmena nebo nepoužíváte-li
@@ -11,7 +11,7 @@ odsazení jednotlivých sekcí. Pro větší čitelnost se ale doporučuje použ
 
 Metadata mapového projektu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Celý příklad *mapfile* si můžete prohlédnout :download:`v souboru <../data/vugtk.map>`. 
+Celý příklad *mapfile* si můžete prohlédnout v :download:`souboru <../data/vugtk.map>`. 
 
 Mapfile začíná slovem ``MAP`` a je ukončen zmiňovaným ``END``. V úvodní sekci
 jsou základní údaje o projektu:
@@ -19,8 +19,8 @@ jsou základní údaje o projektu:
 .. literalinclude:: ../data/vugtk.map
    :lines: 1-7, 106
 
-Je důležité nakonfigurovat výchozí souřadnicový systém projektu, použijeme k tomu
-:wikipedia:`EPSG` kód pro S-JTSK (:epsg:`5514`).
+Je důležité nakonfigurovat výchozí souřadnicový systém projektu, v
+našem případě je to S-JTSK (:epsg:`5514`).
 
 .. literalinclude:: ../data/vugtk.map
    :lines: 25-27
@@ -40,7 +40,7 @@ připraveného lokálně uloženého rastrového souboru.
 .. literalinclude:: ../data/vugtk.map
    :lines: 29-40
 
-Všimněte si, že rastrový snímek je v jiném souřadnicovém systému, než celý projekt
+Všimněte si, že rastrový soubor je v jiném souřadnicovém systému, než celý projekt
 (UTM 33N :epsg:`32633` vs. S-JTSK :epsg:`5514`).
 
 OWS Proxy
@@ -61,7 +61,7 @@ Vektorová vrstva
 ^^^^^^^^^^^^^^^^
 MapServer podporuje všechny myslitelné vektorové formáty (díky knihovně
 `GDAL <http://gdal.org>`_). V našem příkladu se připojíme na dříve vytvořenou databázi :doc:`../postgis/index` a
-zobrazíme vrstvu ``stavebniobjekty`` pod názvem ``budovy``. Všimněte si
+zobrazíme vrstvu ``stavebniobjekty``, kterou v mapfile nazveme ``budovy``. Všimněte si
 sekce ``METADATA``, ve které nastavíme některé atributy budoucích webových
 služeb (:wikipedia:`WMS`, :wikipedia:`WFS`).
    
@@ -77,7 +77,7 @@ daný mapový soubor, např::
 
     http://localhost/cgi-bin/mapserver.exe?map=c:\data\skoleni\vugtk.map
 
-Lepší možnost je, *exportovat* proměnnou prostředí ``MS_MAPFILE``, což můžeme
+Lepší možnost je *exportovat* proměnnou prostředí ``MS_MAPFILE``, čehož docílíme 
 buď v nastavení webového server [#f2]_ ::
 
     Alias /mywms /usr/lib/cgi-bin/mapserver
@@ -87,7 +87,7 @@ buď v nastavení webového server [#f2]_ ::
        SetEnv MS_MAPFILE /path/to/mymapfile.map
     </Location>
 
-nebo zkopírovat ``mapserv.exe`` pod novým jménem a toto jméno použít::
+nebo můžeme zkopírovat ``mapserv.exe`` pod novým jménem a toto jméno použít::
 
     SetEnvIf Request_URI "/cgi-bin/vugtkwms" MS_MAPFILE=/path/to/mymap.map
 
@@ -95,7 +95,7 @@ Testování konfigurace MapServeru
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 První možností je testovat konfiguraci pomocí programu ``shp2img``, který vezme
 výchozí nastavení v námi vytvořeném konfiguračním mapovém souboru a vyrobí z něj
-obrázek
+obrázek.
 
 .. admonition:: Testování mapového souboru v příkazové řádce
    :class: cmd
@@ -119,7 +119,7 @@ Do webového prohlížeče můžeme nyní zadat adresu s dotazem
 
 http://localhost/cgi-bin/vugtkwms?service=wms&request=getcapabilities
 
-Odpověď ze serveru by měla následovat::
+Odpověď ze serveru by měla být:
 
     <?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
     <WMS_Capabilities version="1.3.0"  xmlns="http://www.opengis.net/wms"  ...
